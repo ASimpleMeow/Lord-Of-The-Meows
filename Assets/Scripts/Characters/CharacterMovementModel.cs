@@ -26,14 +26,16 @@ public class CharacterMovementModel : MonoBehaviour {
             m_movementDirection.Normalize();
         }
         
+        // Let physics engine handle movement
         m_body.velocity = m_movementDirection * speed;
     }
 
     public void setDirection(Vector3 direction) {
-        m_movementDirection = new Vector3(direction.x, direction.y, direction.z);
+        m_movementDirection = direction;
 
         if (direction != Vector3.zero) {
-            m_facingDirection = m_movementDirection;
+            m_facingDirection = direction;
+            transform.rotation = Quaternion.LookRotation(m_facingDirection);
         }
     }
 
