@@ -3,51 +3,62 @@ using UnityEngine;
 
 public class CharacterMovementModel : MonoBehaviour {
 
-    public float speed;
+    // Public variables
+    public float WalkSpeed;
+    public float RunSpeed;
+    public float RotationSpeed;
 
-    private Vector3 m_movementDirection;
-    private Vector3 m_facingDirection;
-    private Rigidbody m_body;
+    // Private variables
+    private Vector3 m_MovementDirection;
+    private Vector3 m_FacingDirection;
+    private Quaternion m_TargetRotation;
+    private bool m_IsRunning;
+
+    // Components
+    private Rigidbody m_Body;
+
 
     void Awake() {
-        m_body = GetComponent<Rigidbody>();
+        m_Body = GetComponent<Rigidbody>();
     }
 
     void Start () {
-        setDirection(new Vector3(0, 0,-1));
+        SetDirection(new Vector3(0, 0,-1));
+        IsRunning = false;
     }
 	
 	void Update () {
-        updateMovement();
+        UpdateMovement();
 	}
 
-    void updateMovement() {
-        if (m_movementDirection != Vector3.zero) {
-            m_movementDirection.Normalize();
+    void UpdateMovement() {
+        if (m_MovementDirection != Vector3.zero) {
+            m_MovementDirection.Normalize();
         }
         
         // Let physics engine handle movement
-        m_body.velocity = m_movementDirection * speed;
+        m_Body.velocity = m_MovementDirection * (IsRunning ? RunSpeed : WalkSpeed);
     }
 
-    public void setDirection(Vector3 direction) {
-        m_movementDirection = direction;
+    public void SetDirection(Vector3 direction) {
+        m_MovementDirection = direction;
 
+        // Handle rotation of character
         if (direction != Vector3.zero) {
-            m_facingDirection = direction;
-            transform.rotation = Quaternion.LookRotation(m_facingDirection);
+            m_FacingDirection = direction;
+            m_TargetRotation = Quaternion.LookRotation(m_FacingDirection);
+            transform.eulerAngles = Vector3.up * Mathf.MoveTowardsAngle(
+                transform.eulerAngles.y, m_TargetRotation.eulerAngles.y, RotationSpeed * Time.deltaTime);
         }
+
     }
 
-    public Vector3 getDirection() {
-        return m_movementDirection;
-    }
+    public Vector3 GetDirection() { return m_MovementDirection; }
 
-    public Vector3 getFacingDirection() {
-        return m_facingDirection;
-    }
+    public Vector3 GetFacingDirection() { return m_FacingDirection; }
 
-    public bool isMoving() {
-        return m_movementDirection != Vector3.zero;
-    }
+    public bool IsMoving() { return m_MovementDirection != Vector3.zero; }
+
+    public bool IsRunning { get; set; }
+
 }

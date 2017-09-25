@@ -3,31 +3,31 @@ using UnityEngine;
 
 public class CharacterMovementView : MonoBehaviour {
 
-    public Animator animator;
+    public Animator Animator;
 
-    private CharacterMovementModel m_movementModel;
+    private CharacterMovementModel m_MovementModel;
 
     void Awake() {
-        m_movementModel = GetComponent<CharacterMovementModel>();
+        m_MovementModel = GetComponent<CharacterMovementModel>();
 
-        if (animator == null) {
+        if (Animator == null) {
             Debug.LogError("Character Animator is not setup!");
             enabled = false;
         }
     }
 
 	void Update () {
-        updateDirection();
+        UpdateDirection();
 	}
 
-    void updateDirection() {
-        Vector3 direction = m_movementModel.getDirection();
+    void UpdateDirection() {
+        Vector3 direction = m_MovementModel.GetDirection();
 
         if (direction != Vector3.zero) {
-            animator.SetFloat("DirectionX", direction.x);
-            animator.SetFloat("DirectionY", direction.y);
+            Animator.SetFloat("DirectionX", direction.x);
+            Animator.SetFloat("DirectionY", direction.y);
         }
 
-        animator.SetBool("IsMoving", m_movementModel.isMoving());
+        Animator.SetBool("IsMoving", m_MovementModel.IsMoving());
     }
 }

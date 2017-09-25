@@ -4,20 +4,23 @@ using UnityEngine;
 public class CharacterKeyboardControl : CharacterBaseControl {
 
 	void Update () {
-        updateDirection();
-        updateAction();
+        UpdateDirection();
+        UpdateAction();
 	}
 
-    void updateAction() {
+    void UpdateAction() {
 
         if (Input.GetKeyDown(KeyCode.F)) {
-            onActionPressed();
+            OnActionPressed();
         }
     }
 
-    void updateDirection() {
-        Vector3 newDirection = new Vector3(-Input.GetAxisRaw("Horizontal"), 0.0f, -Input.GetAxisRaw("Vertical"));
+    void UpdateDirection() {
+        Vector3 newDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
 
-        setDirection(newDirection);
+        if (Input.GetKey(KeyCode.LeftShift)) SetRunning(true);
+        else SetRunning(false);
+
+        SetDirection(newDirection);
     }
 }

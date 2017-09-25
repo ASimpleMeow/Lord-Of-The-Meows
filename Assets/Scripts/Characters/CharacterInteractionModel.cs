@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class CharacterInteractionModel : MonoBehaviour {
 
-    private Collider m_collider;
-    private CharacterMovementModel m_movementModel;
+    private Collider m_Collider;
+    private CharacterMovementModel m_MovementModel;
 
     void Awake () {
-        m_collider = GetComponent<Collider>();
-        m_movementModel = GetComponent<CharacterMovementModel>();
+        m_Collider = GetComponent<Collider>();
+        m_MovementModel = GetComponent<CharacterMovementModel>();
     }
 
 	void Update () {
 		
 	}
 
-    public void onInteract() {
+    public void OnInteract() {
         Interactable usableInteractable = FindUsableInteractable();
         if (usableInteractable == null) return;
 
@@ -34,7 +34,7 @@ public class CharacterInteractionModel : MonoBehaviour {
             if (colliderInteractable == null) continue;
 
             Vector3 directionToInteractble = closeColliders[i].transform.position - transform.position;
-            float angleToInteractable = Vector3.Angle(m_movementModel.getFacingDirection(), directionToInteractble);
+            float angleToInteractable = Vector3.Angle(m_MovementModel.GetFacingDirection(), directionToInteractble);
 
             if (angleToInteractable < 40) {
                 if (angleToInteractable < angleToClosestInteractble) {

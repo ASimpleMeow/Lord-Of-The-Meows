@@ -3,23 +3,27 @@ using UnityEngine;
 
 public class CharacterBaseControl : MonoBehaviour {
 
-    private CharacterMovementModel m_movementModel;
-    private CharacterInteractionModel m_interactionModel;
+    private CharacterMovementModel m_MovementModel;
+    private CharacterInteractionModel m_InteractionModel;
 
     void Awake() {
-        m_movementModel = GetComponent<CharacterMovementModel>();
-        m_interactionModel = GetComponent<CharacterInteractionModel>();
+        m_MovementModel = GetComponent<CharacterMovementModel>();
+        m_InteractionModel = GetComponent<CharacterInteractionModel>();
     }
 
-    protected void setDirection(Vector3 direction) {
-        if (m_movementModel == null) return;
+    protected void SetDirection(Vector3 direction) {
+        if (m_MovementModel == null) return;
 
-        m_movementModel.setDirection(direction);
+        m_MovementModel.SetDirection(direction);
     }
 
-    protected void onActionPressed() {
-        if (m_interactionModel == null) return;
+    protected void SetRunning(bool isRunning) {
+        m_MovementModel.IsRunning = isRunning;
+    }
 
-        m_interactionModel.onInteract();
+    protected void OnActionPressed() {
+        if (m_InteractionModel == null) return;
+
+        m_InteractionModel.OnInteract();
     }
 }

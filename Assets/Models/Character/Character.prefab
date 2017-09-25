@@ -99,15 +99,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1877062540838652}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.4, y: 0.22, z: 1.33}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 2.18, y: 0.22, z: -1.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4795244672274828}
   - {fileID: 4365041000449344}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!23 &23142705639899422
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -193,13 +193,13 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1877062540838652}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 1
   m_AngularDrag: Infinity
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!95 &95823368195290350
 Animator:
@@ -240,7 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d890066fc3c01aa45b377194d5443349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  WalkSpeed: 4
+  RunSpeed: 6
+  RotationSpeed: 500
 --- !u!114 &114914163477347526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,7 +274,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.41
-  m_Height: 2.15
+  m_Radius: 0.36782593
+  m_Height: 1.705255
   m_Direction: 1
-  m_Center: {x: 0, y: 0.96, z: 0.19}
+  m_Center: {x: 0, y: 0.89762735, z: 0.1478259}
