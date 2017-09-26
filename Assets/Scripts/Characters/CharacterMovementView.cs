@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+[RequireComponent (typeof (Character))]
 public class CharacterMovementView : MonoBehaviour {
 
     public Animator Animator;
 
-    private CharacterMovementModel m_MovementModel;
+    private Character m_Character;
 
     void Awake() {
-        m_MovementModel = GetComponent<CharacterMovementModel>();
+        m_Character = GetComponent<Character>();
 
         if (Animator == null) {
             Debug.LogError("Character Animator is not setup!");
@@ -21,13 +22,13 @@ public class CharacterMovementView : MonoBehaviour {
 	}
 
     void UpdateDirection() {
-        Vector3 direction = m_MovementModel.GetDirection();
+        Vector3 direction = m_Character.Movement.GetDirection();
 
         if (direction != Vector3.zero) {
             Animator.SetFloat("DirectionX", direction.x);
             Animator.SetFloat("DirectionY", direction.y);
         }
 
-        Animator.SetBool("IsMoving", m_MovementModel.IsMoving());
+        Animator.SetBool("IsMoving", m_Character.Movement.IsMoving());
     }
 }

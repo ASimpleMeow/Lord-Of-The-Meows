@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 95823368195290350}
   - component: {fileID: 54540050654694334}
   - component: {fileID: 136507179215251398}
+  - component: {fileID: 114489814897118750}
   - component: {fileID: 114160775775797556}
   - component: {fileID: 114914163477347526}
   - component: {fileID: 114925177096295838}
@@ -229,6 +230,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5a7b150929a624b996a5fe1b09c699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114489814897118750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1877062540838652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e29569fee0ff6498a5e7a8122e4a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Movement: {fileID: 114807571568810964}
+  Interaction: {fileID: 114914163477347526}
+  MovementView: {fileID: 0}
 --- !u!114 &114807571568810964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -240,8 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d890066fc3c01aa45b377194d5443349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkSpeed: 4
-  RunSpeed: 6
+  WalkSpeed: 3
+  RunSpeed: 5
   RotationSpeed: 500
 --- !u!114 &114914163477347526
 MonoBehaviour:

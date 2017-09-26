@@ -2,30 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent (typeof(Character))]
 public class CharacterInteractionModel : MonoBehaviour {
-	void Update () {
-		
-	}
 
-    public void OnInteract() {
-        Interactable usableInteractable = FindUsableInteractable();
-        if (usableInteractable == null) return;
 
-        Debug.Log("Found Interactable : " + usableInteractable.name);
+    private Character m_Character;
+
+    void Awake() {
+        m_Character = GetComponent<Character>();
     }
 
-    Interactable FindUsableInteractable() {
+    public void OnInteract() {
+        InteractableBase usableInteractable = FindUsableInteractable();
+        if (usableInteractable == null) return;
+
+        usableInteractable.OnInteract(m_Character);
+    }
+
+    InteractableBase FindUsableInteractable() {
         Collider[] closeColliders = Physics.OverlapSphere(transform.position, 1.1f);
-        Interactable closestInteractable = null;
+        InteractableBase closestInteractable = null;
         float angleToClosestInteractble = Mathf.Infinity;
 
         for (int i = 0; i < closeColliders.Length; ++i) {
-            Interactable colliderInteractable = closeColliders[i].GetComponent<Interactable>();
+            InteractableBase colliderInteractable = closeColliders[i].GetComponent<InteractableBase>();
 
             if (colliderInteractable == null) continue;
 
             Vector3 directionToInteractble = closeColliders[i].transform.position - transform.position;
-            float angleToInteractable = Vector3.Angle(transform.forward, directionToInteractble);
+            float angleToInteractable = Vector3.Angle(m_Character.transform.forward, directionToInteractble);
 
             if (angleToInteractable < 60) {
                 if (angleToInteractable < angleToClosestInteractble) {

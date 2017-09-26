@@ -1,29 +1,29 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+[RequireComponent (typeof (Character))]
 public class CharacterBaseControl : MonoBehaviour {
 
-    private CharacterMovementModel m_MovementModel;
-    private CharacterInteractionModel m_InteractionModel;
+
+    private Character m_Character;
 
     void Awake() {
-        m_MovementModel = GetComponent<CharacterMovementModel>();
-        m_InteractionModel = GetComponent<CharacterInteractionModel>();
+        m_Character = GetComponent<Character>();
     }
 
     protected void SetDirection(Vector3 direction) {
-        if (m_MovementModel == null) return;
+        if (m_Character.Movement == null) return;
 
-        m_MovementModel.SetDirection(direction);
+        m_Character.Movement.SetDirection(direction);
     }
 
     protected void SetRunning(bool isRunning) {
-        m_MovementModel.IsRunning = isRunning;
+        m_Character.Movement.IsRunning = isRunning;
     }
 
     protected void OnActionPressed() {
-        if (m_InteractionModel == null) return;
+        if (m_Character.Interaction == null) return;
 
-        m_InteractionModel.OnInteract();
+        m_Character.Interaction.OnInteract();
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+[RequireComponent (typeof(Character))]
+[RequireComponent(typeof(Rigidbody))]
 public class CharacterMovementModel : MonoBehaviour {
 
     // Public variables
@@ -13,6 +15,7 @@ public class CharacterMovementModel : MonoBehaviour {
     private Vector3 m_FacingDirection;
     private Quaternion m_TargetRotation;
     private bool m_IsRunning;
+    private bool m_IsFrozen;
 
     // Components
     private Rigidbody m_Body;
@@ -27,11 +30,17 @@ public class CharacterMovementModel : MonoBehaviour {
         IsRunning = false;
     }
 	
-	void Update () {
+	void FixedUpdate () {
         UpdateMovement();
 	}
 
     void UpdateMovement() {
+
+        if (IsFrozen) {
+            m_Body.velocity = Vector3.zero;
+            return;
+        }
+
         if (m_MovementDirection != Vector3.zero) {
             m_MovementDirection.Normalize();
         }
@@ -41,6 +50,9 @@ public class CharacterMovementModel : MonoBehaviour {
     }
 
     public void SetDirection(Vector3 direction) {
+
+        if (IsFrozen) return;
+
         m_MovementDirection = direction;
 
         // Handle rotation of character
@@ -57,8 +69,13 @@ public class CharacterMovementModel : MonoBehaviour {
 
     public Vector3 GetFacingDirection() { return m_FacingDirection; }
 
-    public bool IsMoving() { return m_MovementDirection != Vector3.zero; }
+    public bool IsMoving() {
+        if (IsFrozen) return false;
+        return m_MovementDirection != Vector3.zero;
+    }
 
     public bool IsRunning { get; set; }
+
+    public bool IsFrozen { get; set; }
 
 }

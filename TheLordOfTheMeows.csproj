@@ -78,12 +78,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Characters\Character.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterBaseControl.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterInteractionModel.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterKeyboardControl.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterMovementModel.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterMovementView.cs" />
-    <Compile Include="Assets\Scripts\Objects\Interactable.cs" />
+    <Compile Include="Assets\Scripts\Interface\DialogBox.cs" />
+    <Compile Include="Assets\Scripts\Objects\InteractableBase.cs" />
+    <Compile Include="Assets\Scripts\Objects\InteractableChest.cs" />
+    <Compile Include="Assets\Scripts\Objects\InteractableSign.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
