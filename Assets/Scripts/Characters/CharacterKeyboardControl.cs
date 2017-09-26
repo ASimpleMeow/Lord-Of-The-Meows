@@ -10,7 +10,7 @@ public class CharacterKeyboardControl : CharacterBaseControl {
 
     void UpdateAction() {
 
-        if (Input.GetKeyDown(KeyCode.F)) {
+        if (Input.GetKeyDown(KeyCode.E)) {
             OnActionPressed();
         }
     }
