@@ -9,13 +9,14 @@ public class DialogBox : MonoBehaviour {
     private Image m_DialogFrame;
     private Text m_Text;
 
-    void Awake() {
+    private void Awake() {
         Instance = this;
 
         m_DialogFrame = GetComponent<Image>();
         m_Text = GetComponentInChildren<Text>();
     }
 
+    //---------STATIC FUNCTIONS------------//
     public static void Show(string displayText) {
         Instance.DoShow(displayText);
     }
@@ -28,12 +29,18 @@ public class DialogBox : MonoBehaviour {
         return Instance.m_DialogFrame.enabled;
     }
 
-    void DoHide() {
+    public static string GetText() {
+        return Instance.m_Text.text;
+    }
+
+
+    //--------------------------//
+    private void DoHide() {
         m_DialogFrame.enabled = false;
         m_Text.enabled = false;
     }
 
-    void DoShow(string displayText) {
+    private void DoShow(string displayText) {
         m_DialogFrame.enabled = true;
 
 

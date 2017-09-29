@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractableBase : MonoBehaviour {
 
-	virtual public void OnInteract(Character character) {
-        Debug.LogWarning("OnInteract is not implemented!");
+	virtual public void OnInteract(ref Character character) {
+        Debug.LogWarning("OnInteract is not implemented!", gameObject);
     }
 }

@@ -8,3 +8,12 @@ Further reading :
 - [Concept Document](./Concept_Document.pdf)
 - [Proposal Document](./Proposal_Document.pdf)
 
+---
+
+## Progress Report  
+29-09-2017  
+&nbsp;  
+- Basic character movement __WASD__: UP, LEFT, DOWN, RIGHT.
+- Camera movement.
+- Chest Interactable script.
+- Sign/Dialog Interactable script.

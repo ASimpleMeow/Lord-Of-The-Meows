@@ -4,11 +4,12 @@ using UnityEngine;
 [RequireComponent (typeof (Character))]
 public class CharacterMovementView : MonoBehaviour {
 
-    public Animator Animator;
+    [SerializeField]
+    private Animator Animator;
 
     private Character m_Character;
 
-    void Awake() {
+    private void Awake() {
         m_Character = GetComponent<Character>();
 
         if (Animator == null) {
@@ -17,11 +18,11 @@ public class CharacterMovementView : MonoBehaviour {
         }
     }
 
-	void Update () {
+	private void Update () {
         UpdateDirection();
 	}
 
-    void UpdateDirection() {
+    private void UpdateDirection() {
         Vector3 direction = m_Character.Movement.GetDirection();
 
         if (direction != Vector3.zero) {

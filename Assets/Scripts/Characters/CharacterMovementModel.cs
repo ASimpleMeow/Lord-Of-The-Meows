@@ -5,10 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class CharacterMovementModel : MonoBehaviour {
 
-    // Public variables
-    public float WalkSpeed;
-    public float RunSpeed;
-    public float RotationSpeed;
+    // Inspector fields
+    [SerializeField]
+    private float WalkSpeed;
+    [SerializeField]
+    private float RunSpeed;
+    [SerializeField]
+    private float RotationSpeed;
 
     // Private variables
     private Vector3 m_MovementDirection;
@@ -21,32 +24,33 @@ public class CharacterMovementModel : MonoBehaviour {
     private Rigidbody m_Body;
 
 
-    void Awake() {
+    private void Awake() {
         m_Body = GetComponent<Rigidbody>();
     }
 
-    void Start () {
+    private void Start () {
         SetDirection(new Vector3(0, 0,-1));
         IsRunning = false;
     }
 	
-	void FixedUpdate () {
+	private void FixedUpdate () {
         UpdateMovement();
 	}
 
-    void UpdateMovement() {
+    private void UpdateMovement() {
 
         if (IsFrozen) {
             m_Body.velocity = Vector3.zero;
             return;
         }
 
-        if (m_MovementDirection != Vector3.zero) {
-            m_MovementDirection.Normalize();
-        }
-        
-        // Let physics engine handle movement
-        m_Body.velocity = m_MovementDirection * (IsRunning ? RunSpeed : WalkSpeed);
+        if (m_MovementDirection != Vector3.zero) m_MovementDirection.Normalize();
+
+        // Let physics engine handle movement (and gravity of y coordinate)
+        Vector3 velocity = new Vector3((m_MovementDirection.x * (IsRunning ? RunSpeed : WalkSpeed)),
+                                        m_Body.velocity.y,
+                                        (m_MovementDirection.z * (IsRunning ? RunSpeed : WalkSpeed)));
+        m_Body.velocity = velocity;
     }
 
     public void SetDirection(Vector3 direction) {
@@ -59,11 +63,16 @@ public class CharacterMovementModel : MonoBehaviour {
         if (direction != Vector3.zero) {
             m_FacingDirection = direction;
             m_TargetRotation = Quaternion.LookRotation(m_FacingDirection);
-            transform.eulerAngles = Vector3.up * Mathf.MoveTowardsAngle(
-                transform.eulerAngles.y, m_TargetRotation.eulerAngles.y, RotationSpeed * Time.deltaTime);
+            transform.eulerAngles = Vector3.up * Mathf.MoveTowardsAngle(transform.eulerAngles.y,
+                                                                        m_TargetRotation.eulerAngles.y,
+                                                                        RotationSpeed * Time.deltaTime);
         }
 
     }
+
+
+
+    //---------GETTERS/SETTERS------------//
 
     public Vector3 GetDirection() { return m_MovementDirection; }
 

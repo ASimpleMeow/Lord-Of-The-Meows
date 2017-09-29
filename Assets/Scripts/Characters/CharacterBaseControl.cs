@@ -4,16 +4,16 @@ using UnityEngine;
 [RequireComponent (typeof (Character))]
 public class CharacterBaseControl : MonoBehaviour {
 
-
     private Character m_Character;
 
-    void Awake() {
+    private void Awake() {
         m_Character = GetComponent<Character>();
     }
 
+
+    //---------MOVEMENT CONTROL------------//
     protected void SetDirection(Vector3 direction) {
         if (m_Character.Movement == null) return;
-
         m_Character.Movement.SetDirection(direction);
     }
 
@@ -21,9 +21,10 @@ public class CharacterBaseControl : MonoBehaviour {
         m_Character.Movement.IsRunning = isRunning;
     }
 
+
+    //---------INTERACTION CONTROL------------//
     protected void OnActionPressed() {
         if (m_Character.Interaction == null) return;
-
         m_Character.Interaction.OnInteract();
     }
 }

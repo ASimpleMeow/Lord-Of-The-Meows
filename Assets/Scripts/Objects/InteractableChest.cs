@@ -3,26 +3,27 @@ using UnityEngine;
 
 public class InteractableChest : InteractableBase {
 
-    public Mesh openChestMesh;
+    [SerializeField]
+    private Mesh openChestMesh;
 
     private bool m_IsOpen;
     private MeshFilter m_MeshFilter;
 
-    void Awake() {
+    private void Awake() {
         m_MeshFilter = GetComponent<MeshFilter>();
     }
 
-    void Start() {
+    private void Start() {
         m_IsOpen = false;
     }
 
-    public override void OnInteract(Character character) {
+    public override void OnInteract(ref Character character) {
 
         if (m_IsOpen) return;
 
         m_IsOpen = true;
 
-        //Add Items to characters inventory here
+        //TODO Add item to character inventory
 
         if (openChestMesh == null) return;
         m_MeshFilter.mesh = openChestMesh;

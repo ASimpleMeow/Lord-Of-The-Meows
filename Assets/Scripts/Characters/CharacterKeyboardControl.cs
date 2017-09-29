@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class CharacterKeyboardControl : CharacterBaseControl {
 
-	void Update () {
+    private void Update () {
         UpdateDirection();
         UpdateAction();
 	}
 
-    void UpdateAction() {
+    private void UpdateAction() {
 
         if (Input.GetKeyDown(KeyCode.E)) {
             OnActionPressed();
         }
     }
 
-    void UpdateDirection() {
+    private void UpdateDirection() {
         Vector3 newDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
 
         if (Input.GetKey(KeyCode.LeftShift)) SetRunning(true);

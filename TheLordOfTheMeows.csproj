@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Characters\CharacterKeyboardControl.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterMovementModel.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterMovementView.cs" />
+    <Compile Include="Assets\Scripts\Interface\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Interface\DialogBox.cs" />
     <Compile Include="Assets\Scripts\Objects\InteractableBase.cs" />
     <Compile Include="Assets\Scripts\Objects\InteractableChest.cs" />

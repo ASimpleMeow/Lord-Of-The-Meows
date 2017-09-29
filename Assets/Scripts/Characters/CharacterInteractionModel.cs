@@ -5,10 +5,9 @@ using UnityEngine;
 [RequireComponent (typeof(Character))]
 public class CharacterInteractionModel : MonoBehaviour {
 
-
     private Character m_Character;
 
-    void Awake() {
+    private void Awake() {
         m_Character = GetComponent<Character>();
     }
 
@@ -16,10 +15,20 @@ public class CharacterInteractionModel : MonoBehaviour {
         InteractableBase usableInteractable = FindUsableInteractable();
         if (usableInteractable == null) return;
 
-        usableInteractable.OnInteract(m_Character);
+        usableInteractable.OnInteract(ref m_Character);
     }
 
-    InteractableBase FindUsableInteractable() {
+
+    /*
+     * Finds a useable interactable object by doing the following:
+     *      - Create a sphere (TODO - Try capsule) to return all close by colliders
+     *      - Loop through the colliders if the gameobject is not interactable, continue
+     *      - Get the direction to interactable
+     *      - Find the angle between character and interactable
+     *      - If angle is acceptable, store that interactable (in case you find a better match)
+     *      - Return best interactable you found
+     */
+    private InteractableBase FindUsableInteractable() {
         Collider[] closeColliders = Physics.OverlapSphere(transform.position, 1.1f);
         InteractableBase closestInteractable = null;
         float angleToClosestInteractble = Mathf.Infinity;
