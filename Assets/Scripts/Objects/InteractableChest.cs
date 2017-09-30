@@ -17,7 +17,7 @@ public class InteractableChest : InteractableBase {
         m_IsOpen = false;
     }
 
-    public override void OnInteract(ref Character character) {
+    public override void OnInteract(Character character) {
 
         if (m_IsOpen) return;
 

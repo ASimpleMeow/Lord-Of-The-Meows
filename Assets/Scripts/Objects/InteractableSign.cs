@@ -8,22 +8,44 @@ public class InteractableSign : InteractableBase {
     [TextArea(3, 10)]
     private string[] Messages;
 
+    //Potential choices
+    private List<ChoiceBase> m_Choices;
+
 
     private Queue<string> m_MessageQueue;
     private Coroutine m_TypeMessageCoroutine;
 
     private void Awake() {
         m_MessageQueue = new Queue<string>();
+        m_Choices = new List<ChoiceBase>(GetComponents<ChoiceBase>());
         m_TypeMessageCoroutine = null;
     }
 
-    public override void OnInteract(ref Character character) {
+    public override void OnInteract(Character character) {
 
         if (Messages.Length == 0) return;
 
-        if (!DialogBox.IsVisible()) Init(ref character);
+        if (!DialogBox.IsVisible()) Init(character, Messages);
 
-        DisplayNextMessage(ref character);
+        DisplayNextMessage(character);
+    }
+
+    public void OnInteract(Character character, ChoiceBase choiceDialog, string[] newMessages, bool overrideMessage, bool remove) {
+        //if (Messages == newMessages) return;
+        if (Messages.Length == 0) return;
+
+        if (remove) {
+            foreach (ChoiceBase choice in m_Choices) {
+                if (GameObject.ReferenceEquals(choice, choiceDialog)) {
+                    m_Choices.Remove(choiceDialog);
+                    break;
+                }
+            }
+        }
+
+        if (overrideMessage) Messages = newMessages;
+        Init(character, newMessages);
+        DisplayNextMessage(character);
     }
 
     /*
@@ -33,30 +55,51 @@ public class InteractableSign : InteractableBase {
      *         - Freeze players movement
      *         - Freeze game time after one frame
      */
-    private void Init(ref Character character) {
+    private void Init(Character character, string[] messages) {
 
         m_MessageQueue.Clear();
 
-        foreach (string message in Messages) m_MessageQueue.Enqueue(message);
+        foreach (string message in messages) m_MessageQueue.Enqueue(message);
 
         character.Movement.IsFrozen = true;
         StartCoroutine(FreezeTimeRoutine());
     }
 
-    private void DisplayNextMessage(ref Character character) {
+    private void DisplayNextMessage(Character character) {
 
         // Last message was seen, therefore end interaction
         if (m_MessageQueue.Count == 0) {
-            Time.timeScale = 1;
-            character.Movement.IsFrozen = false;
-            DialogBox.Hide();
-            m_TypeMessageCoroutine = null;
+
+            if (m_Choices.Count != 0) HandleChoices(character);
+            else EndInteraction(character);
+
             return;
         }
 
         // Type one character of the message per frame (nice effect)
         if(m_TypeMessageCoroutine != null) StopCoroutine(m_TypeMessageCoroutine);
         m_TypeMessageCoroutine = StartCoroutine(TypeMessage(m_MessageQueue.Dequeue()));
+    }
+
+    private void HandleChoices(Character character) {
+
+        if (!ChoiceBox.IsVisible()) {
+            string[] choiceNames = new string[m_Choices.Count];
+            for (int i = 0; i < m_Choices.Count; ++i) choiceNames[i] = m_Choices[i].ChoiceName;
+            ChoiceBox.Show(choiceNames);
+            return;
+        }
+
+        m_Choices[ChoiceBox.GetSelectedChoice()].OnExecute(character);
+
+    }
+
+    private void EndInteraction(Character character) {
+        Time.timeScale = 1;
+        character.Movement.IsFrozen = false;
+        DialogBox.Hide();
+        if (ChoiceBox.IsVisible()) ChoiceBox.Hide();
+        m_TypeMessageCoroutine = null;
     }
 
     private IEnumerator FreezeTimeRoutine() {

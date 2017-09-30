@@ -15,9 +15,16 @@ public class CharacterInteractionModel : MonoBehaviour {
         InteractableBase usableInteractable = FindUsableInteractable();
         if (usableInteractable == null) return;
 
-        usableInteractable.OnInteract(ref m_Character);
+        usableInteractable.OnInteract(m_Character);
     }
 
+    public void OnChoiceSelectUp() {
+        ChoiceBox.HightlightChoice(true);
+    }
+
+    public void OnChoiceSelectDown() {
+        ChoiceBox.HightlightChoice(false);
+    }
 
     /*
      * Finds a useable interactable object by doing the following:

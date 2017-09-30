@@ -11,9 +11,21 @@ Further reading :
 ---
 
 ## Progress Report  
+&nbsp; 
 29-09-2017  
-&nbsp;  
 - Basic character movement __WASD__: UP, LEFT, DOWN, RIGHT.
 - Camera movement.
 - Chest Interactable script.
-- Sign/Dialog Interactable script.
+- Sign/Dialog Interactable script.  
+
+&nbsp; 
+30-09-2017  
+- Implement choice system: 
+    - When interacting with a InteractableSign which has one or more Choice types, the player will be given these choices.
+    - The playe will use the __UP__ and __DOWN__ arrows to select the choice and press the __E__ key to continue.
+- Choices implemented:
+    - Dialog choice - displays additional dialog, has three fields :
+        - string[] : new messages to display.
+        - bool : Override original message of the InteractableSign.
+        - bool : Remove this choice once it has been selected.
+    - Exit - Ends the interaction.

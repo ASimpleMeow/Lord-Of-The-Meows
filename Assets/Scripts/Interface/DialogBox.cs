@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogBox : MonoBehaviour {
 
-    static DialogBox Instance;
+    private static DialogBox Instance;
 
     private Image m_DialogFrame;
     private Text m_Text;

@@ -27,4 +27,14 @@ public class CharacterBaseControl : MonoBehaviour {
         if (m_Character.Interaction == null) return;
         m_Character.Interaction.OnInteract();
     }
+
+    protected void OnUpPressed() {
+        if (m_Character.Interaction == null) return;
+        m_Character.Interaction.OnChoiceSelectUp();
+    }
+
+    protected void OnDownPressed() {
+        if (m_Character.Interaction == null) return;
+        m_Character.Interaction.OnChoiceSelectDown();
+    }
 }
