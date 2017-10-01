@@ -10,16 +10,14 @@ public class CharacterKeyboardControl : CharacterBaseControl {
 
     private void UpdateActions() {
 
-        if (Input.GetKeyDown(KeyCode.E)) {
-            OnActionPressed();
+        if (Input.GetKeyDown(KeyCode.E)) OnActionPressed();
+        else if (Input.GetKeyDown(KeyCode.UpArrow)) OnUpChoice();
+        else if (Input.GetKeyDown(KeyCode.DownArrow)) OnDownChoice();
 
-        }else if (Input.GetKeyDown(KeyCode.UpArrow)) {
-            OnUpPressed();
+        if (Input.GetKeyDown(KeyCode.Space)) OnUseItem();
+        else if (Input.GetKeyDown(KeyCode.LeftArrow)) OnPreviousItem();
+        else if (Input.GetKeyDown(KeyCode.RightArrow)) OnNextItem();
 
-        }else if (Input.GetKeyDown(KeyCode.DownArrow)) {
-            OnDownPressed();
-
-        }
     }
 
     private void UpdateDirection() {

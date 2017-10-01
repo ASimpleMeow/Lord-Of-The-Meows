@@ -17,10 +17,11 @@ Further reading :
 - Camera movement.
 - Chest Interactable script.
 - Sign/Dialog Interactable script.  
+  
 
 &nbsp; 
 30-09-2017  
-- Implement choice system: 
+- Implemented choice system: 
     - When interacting with a InteractableSign which has one or more Choice types, the player will be given these choices.
     - The playe will use the __UP__ and __DOWN__ arrows to select the choice and press the __E__ key to continue.
 - Choices implemented:
@@ -29,3 +30,10 @@ Further reading :
         - bool : Override original message of the InteractableSign.
         - bool : Remove this choice once it has been selected.
     - Exit - Ends the interaction.
+
+  
+&nbsp;
+01-10-2017
+- Implemented Inventory system, with seven slots.
+    - Player navigates the inventory via __LEFT__ and __RIGHT__ arrow keys.
+    - Player uses the selected item via __SPACEBAR__ key.

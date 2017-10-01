@@ -28,13 +28,27 @@ public class CharacterBaseControl : MonoBehaviour {
         m_Character.Interaction.OnInteract();
     }
 
-    protected void OnUpPressed() {
+    protected void OnUpChoice() {
         if (m_Character.Interaction == null) return;
         m_Character.Interaction.OnChoiceSelectUp();
     }
 
-    protected void OnDownPressed() {
+    protected void OnDownChoice() {
         if (m_Character.Interaction == null) return;
         m_Character.Interaction.OnChoiceSelectDown();
+    }
+
+
+    //---------INVENTORY CONTROL------------//
+    protected void OnUseItem() {
+        m_Character.Inventory.Use();
+    }
+
+    protected void OnPreviousItem() {
+        m_Character.InventoryView.PreviousItem();
+    }
+
+    protected void OnNextItem() {
+        m_Character.InventoryView.NextItem();
     }
 }
