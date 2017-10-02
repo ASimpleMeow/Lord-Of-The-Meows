@@ -9,7 +9,10 @@ public class InteractableSign : InteractableBase {
     private string[] Messages;
     [SerializeField]
     private List<ChoiceBase> m_Choices;
-
+    [SerializeField]
+    private bool m_RemoveChoices;
+    [SerializeField]
+    private bool m_IgnoreChoices;
 
     private Queue<string> m_MessageQueue;
     private Coroutine m_TypeMessageCoroutine;
@@ -28,11 +31,10 @@ public class InteractableSign : InteractableBase {
         DisplayNextMessage(character);
     }
 
-    public void OnInteract(Character character, ChoiceBase choiceDialog, string[] newMessages, bool overrideMessage, bool remove) {
-        //if (Messages == newMessages) return;
+    public void OnInteract(Character character, ChoiceBase choiceDialog, string[] newMessages, ChoiceOptions extra) {
         if (Messages.Length == 0) return;
 
-        if (remove) {
+        if ((extra & ChoiceOptions.RemoveChoice) == ChoiceOptions.RemoveChoice) {
             foreach (ChoiceBase choice in m_Choices) {
                 if (GameObject.ReferenceEquals(choice, choiceDialog)) {
                     m_Choices.Remove(choiceDialog);
@@ -41,8 +43,11 @@ public class InteractableSign : InteractableBase {
             }
         }
 
-        if (overrideMessage) Messages = newMessages;
+        if ((extra & ChoiceOptions.Override) == ChoiceOptions.Override) Messages = newMessages;
         Init(character, newMessages);
+        m_IgnoreChoices = (extra & ChoiceOptions.EndInteraction) == ChoiceOptions.EndInteraction;
+        m_RemoveChoices = (extra & ChoiceOptions.RemoveChoices) == ChoiceOptions.RemoveChoices;
+
         DisplayNextMessage(character);
     }
 
@@ -56,6 +61,7 @@ public class InteractableSign : InteractableBase {
     private void Init(Character character, string[] messages) {
 
         m_MessageQueue.Clear();
+        m_IgnoreChoices = false;
 
         foreach (string message in messages) m_MessageQueue.Enqueue(message);
 
@@ -64,12 +70,10 @@ public class InteractableSign : InteractableBase {
     }
 
     private void DisplayNextMessage(Character character) {
-
-        // Last message was seen, therefore end interaction
+        
         if (m_MessageQueue.Count == 0) {
-
-            if (m_Choices.Count != 0) HandleChoices(character);
-            else EndInteraction(character);
+            if(m_IgnoreChoices || m_RemoveChoices || m_Choices.Count == 0) EndInteraction(character);
+            else HandleChoices(character);
 
             return;
         }
