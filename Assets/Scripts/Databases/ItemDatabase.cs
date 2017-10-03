@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ItemDatabase : ScriptableObject {
 
-    public List<ItemData> Data;
+    // Inspector fields
+    private List<ItemData> Data;
 
     public ItemData FindItem(ItemType itemType) {
 

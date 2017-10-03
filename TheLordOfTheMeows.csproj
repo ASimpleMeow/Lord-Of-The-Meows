@@ -98,8 +98,8 @@
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableBase.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableChest.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableSign.cs" />
+    <Compile Include="Assets\Scripts\Objects\Interactable\InteractableSignChoice.cs" />
     <Compile Include="Assets\Scripts\Objects\ItemSlot.cs" />
-    <Compile Include="Assets\Scripts\Objects\ItemType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

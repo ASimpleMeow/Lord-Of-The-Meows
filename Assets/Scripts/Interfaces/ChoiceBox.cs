@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ChoiceBox : MonoBehaviour {
 
+    // Inspector field
     [SerializeField]
     private Button ButtonObject;
 

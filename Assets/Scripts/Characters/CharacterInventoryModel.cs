@@ -26,13 +26,16 @@ public class CharacterInventoryModel : MonoBehaviour {
 
     public void AddItem(ItemType itemType) {
         AddItem(itemType, 1);
-        m_Character.InventoryView.AddItem(itemType, 1);
     }
 
     public void AddItem(ItemType itemType, int amount) {
 
+        if (m_Character.Movement.IsFrozen) return;
+
         if (Items.ContainsKey(itemType)) Items[itemType] += amount;
         else Items.Add(itemType, amount);
+
+        if (m_Character.InventoryView == null) return;
 
         m_Character.InventoryView.AddItem(itemType, amount);
     }
@@ -43,15 +46,20 @@ public class CharacterInventoryModel : MonoBehaviour {
 
     public void RemoveItem(ItemType itemType, int amount) {
 
-        if (!Items.ContainsKey(itemType)) return;
+        if (!Items.ContainsKey(itemType) || m_Character.Movement.IsFrozen) return;
 
         if (Items[itemType] > amount) Items[itemType] -= amount;
         else Items.Remove(itemType);
+
+        if (m_Character.InventoryView == null) return;
 
         m_Character.InventoryView.RemoveItem(itemType, amount);
     }
 
     public void Use() {
+
+        if (m_Character.Movement.IsFrozen || m_Character.InventoryView == null) return;
+
         ItemType selectedItem = m_Character.InventoryView.GetSelectedItem();
 
         switch (selectedItem) {

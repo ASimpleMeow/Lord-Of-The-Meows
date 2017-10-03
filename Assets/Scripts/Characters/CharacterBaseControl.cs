@@ -10,7 +10,6 @@ public class CharacterBaseControl : MonoBehaviour {
         m_Character = GetComponent<Character>();
     }
 
-
     //---------MOVEMENT CONTROL------------//
     protected void SetDirection(Vector3 direction) {
         if (m_Character.Movement == null) return;
@@ -18,6 +17,7 @@ public class CharacterBaseControl : MonoBehaviour {
     }
 
     protected void SetRunning(bool isRunning) {
+        if (m_Character.Movement == null) return;
         m_Character.Movement.IsRunning = isRunning;
     }
 
@@ -41,14 +41,17 @@ public class CharacterBaseControl : MonoBehaviour {
 
     //---------INVENTORY CONTROL------------//
     protected void OnUseItem() {
+        if (m_Character.Inventory == null) return;
         m_Character.Inventory.Use();
     }
 
     protected void OnPreviousItem() {
+        if (m_Character.Inventory == null) return;
         m_Character.InventoryView.PreviousItem();
     }
 
     protected void OnNextItem() {
+        if (m_Character.Inventory == null) return;
         m_Character.InventoryView.NextItem();
     }
 }

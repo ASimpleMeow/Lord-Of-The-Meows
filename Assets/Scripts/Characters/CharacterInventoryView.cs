@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Character))]
 public class CharacterInventoryView : MonoBehaviour {
 
+    // Inspector fields
     [SerializeField]
     private GameObject InventoryBox;
 
@@ -27,6 +28,7 @@ public class CharacterInventoryView : MonoBehaviour {
         PreviousItem();
     }
 
+    //---------SELECTING ITEMS------------//
     public void NextItem() {
         m_ItemSlots[m_SelectedIndex].Select(false);
         if (m_SelectedIndex < m_ItemSlots.Count - 1) m_SelectedIndex++;
@@ -49,19 +51,20 @@ public class CharacterInventoryView : MonoBehaviour {
         return ItemType.NONE;
     }
 
-    public void AddItem(ItemType itemType, int amount) {
 
-        bool typeFound = false;
+
+
+    public void AddItem(ItemType itemType, int amount) {
 
         foreach (ItemSlot slot in m_ItemSlots) {
             if (slot.Type == itemType) {
-                typeFound = true;
                 slot.AddItem(itemType, amount);
-                break;
+                return;
             }
         }
 
-        if (!typeFound) PlaceEmpty(itemType, amount);
+        //itemType not found in the current inventory, add in a new place
+        PlaceEmpty(itemType, amount);
     }
 
     public void RemoveItem(ItemType itemType, int amount) {

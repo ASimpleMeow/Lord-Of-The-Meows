@@ -19,9 +19,6 @@ public class ItemSlot : MonoBehaviour {
     private Text m_StackText;
 
     private void Awake() {
-        //m_ItemImageSprite = GetComponentInChildren<Image>();
-        //m_StackText = GetComponentInChildren<Text>();
-       // m_ItemButton = GetComponentInChildren<Button>();
         m_Amount = 0;
         m_ItemType = ItemType.NONE;
         IsSelected = false;

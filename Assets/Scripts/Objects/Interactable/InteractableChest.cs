@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class InteractableChest : InteractableBase {
 
+    // Inspector fields
     [SerializeField]
     private Mesh OpenChestMesh;
     [SerializeField]

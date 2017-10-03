@@ -37,3 +37,15 @@ Further reading :
 - Implemented Inventory system, with seven slots.
     - Player navigates the inventory via __LEFT__ and __RIGHT__ arrow keys.
     - Player uses the selected item via __SPACEBAR__ key.
+	
+  
+&nbsp;
+02-10-2017
+- Implement choice flags for choice option control.
+- Try out using additive scene with main scene.
+	
+  
+&nbsp;
+03-10-2017
+- Extend InteractableSign into InteractableSignChoice which has choices feature.
+- Fix bug of using items, adding items and removing items when character is frozen.

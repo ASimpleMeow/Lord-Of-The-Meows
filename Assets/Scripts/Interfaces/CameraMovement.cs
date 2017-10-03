@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class CameraMovement : MonoBehaviour {
 
+    // Inspector fields
     [SerializeField]
     private Transform Target;
     [SerializeField]

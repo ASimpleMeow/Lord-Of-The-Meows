@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent (typeof (Character))]
 public class CharacterMovementView : MonoBehaviour {
 
+    // Inspector fields
     [SerializeField]
     private Animator Animator;
 
