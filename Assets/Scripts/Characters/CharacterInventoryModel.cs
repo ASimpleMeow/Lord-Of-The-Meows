@@ -36,7 +36,7 @@ public class CharacterInventoryModel : MonoBehaviour {
         else Items.Add(itemType, amount);
 
         if (m_Character.InventoryView == null) return;
-
+        
         m_Character.InventoryView.AddItem(itemType, amount);
     }
 
@@ -52,7 +52,7 @@ public class CharacterInventoryModel : MonoBehaviour {
         else Items.Remove(itemType);
 
         if (m_Character.InventoryView == null) return;
-
+       
         m_Character.InventoryView.RemoveItem(itemType, amount);
     }
 

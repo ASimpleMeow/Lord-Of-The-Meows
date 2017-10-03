@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemDatabase : ScriptableObject {
 
     // Inspector fields
+    [SerializeField]
     private List<ItemData> Data;
 
     public ItemData FindItem(ItemType itemType) {

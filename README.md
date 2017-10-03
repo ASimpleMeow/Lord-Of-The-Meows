@@ -49,3 +49,4 @@ Further reading :
 03-10-2017
 - Extend InteractableSign into InteractableSignChoice which has choices feature.
 - Fix bug of using items, adding items and removing items when character is frozen.
+- Fix bug of ItemDatabase returning null.
