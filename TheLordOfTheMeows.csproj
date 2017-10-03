@@ -86,12 +86,11 @@
     <Compile Include="Assets\Scripts\Characters\CharacterKeyboardControl.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterMovementModel.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterMovementView.cs" />
-    <Compile Include="Assets\Scripts\Databases\Database.cs" />
-    <Compile Include="Assets\Scripts\Databases\ItemDatabase.cs" />
     <Compile Include="Assets\Scripts\Interfaces\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ChoiceBox.cs" />
     <Compile Include="Assets\Scripts\Interfaces\DialogBox.cs" />
     <Compile Include="Assets\Scripts\Misc\Enums.cs" />
+    <Compile Include="Assets\Scripts\Misc\SceneController.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\Choices\ChoiceBase.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\Choices\ChoiceDialog.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\Choices\ChoiceExit.cs" />
@@ -100,6 +99,10 @@
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableSign.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableSignChoice.cs" />
     <Compile Include="Assets\Scripts\Objects\ItemSlot.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Character\CharacterData.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Databases\Database.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Databases\ItemDatabase.cs" />
+    <Compile Include="Assets\Scripts\testingScenePersistance.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -9,6 +9,8 @@ public class CharacterInventoryView : MonoBehaviour {
     [SerializeField]
     private GameObject InventoryBox;
 
+    private Character m_Character;
+
     private List<ItemSlot> m_ItemSlots;
     private int m_EmptySlots;
     private int m_SelectedIndex;
@@ -19,10 +21,23 @@ public class CharacterInventoryView : MonoBehaviour {
             enabled = false;
         }
 
+        m_Character = GetComponent<Character>();
+
+        if (m_Character.Data == null) {
+            Debug.LogError("No Character data found!");
+            enabled = false;
+        }
+
         m_ItemSlots = new List<ItemSlot>(InventoryBox.GetComponentsInChildren<ItemSlot>());
     }
 
     private void Start() {
+
+        //Populate the InventoryBox
+        foreach(ItemType key in m_Character.Data.Inventory.Items.Keys) {
+            AddItem(key, m_Character.Data.Inventory.Items[key]);
+        }
+
         m_SelectedIndex = 0;
         m_EmptySlots = m_ItemSlots.Count;
         PreviousItem();
@@ -50,9 +65,6 @@ public class CharacterInventoryView : MonoBehaviour {
 
         return ItemType.NONE;
     }
-
-
-
 
     public void AddItem(ItemType itemType, int amount) {
 

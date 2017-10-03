@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 635
-  m_MinSize: {x: 709, y: 492}
-  m_MaxSize: {x: 18004, y: 14042}
+  m_MinSize: {x: 713, y: 492}
+  m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 702
+  controlID: 142
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1071
     height: 635
-  m_MinSize: {x: 432, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 436, y: 492}
+  m_MaxSize: {x: 14006, y: 14042}
   vertical: 1
-  controlID: 703
+  controlID: 143
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 704
+  controlID: 97
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -228,10 +228,10 @@ MonoBehaviour:
     y: 350
     width: 1071
     height: 285
-  m_MinSize: {x: 432, y: 271}
-  m_MaxSize: {x: 14002, y: 10021}
+  m_MinSize: {x: 436, y: 271}
+  m_MaxSize: {x: 14006, y: 10021}
   vertical: 0
-  controlID: 765
+  controlID: 144
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -302,10 +302,10 @@ MonoBehaviour:
     y: 0
     width: 295
     height: 635
-  m_MinSize: {x: 277, y: 171}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 277, y: 192}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 730
+  controlID: 49
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -460,9 +460,9 @@ MonoBehaviour:
     height: 329
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 849cffff
+    m_SelectedIDs: 24dcffff
     m_LastClickedID: 0
-    m_ExpandedIDs: 18fcffff1afcffff000000006c270000
+    m_ExpandedIDs: 18edffff18fcffff1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -481,8 +481,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
-  - PersistantScene
-  - TestScene
+  - PersistentScene
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -513,14 +512,14 @@ MonoBehaviour:
     width: 691
     height: 329
   m_SceneLighting: 1
-  lastFramingTime: 2236.326721158879
+  lastFramingTime: 450.8628875819811
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 5.1450806, y: 7.6127024, z: 5.615393}
+    m_Target: {x: 5.1173215, y: 7.056096, z: 6.35576}
     speed: 2
-    m_Value: {x: 5.1450806, y: 7.6127024, z: 5.615393}
+    m_Value: {x: 5.1173215, y: 7.056096, z: 6.35576}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -547,9 +546,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.14252011, y: 0.8496272, z: -0.29101893, w: -0.41608873}
   m_Size:
-    m_Target: 1.2738194
+    m_Target: 11.002919
     speed: 2
-    m_Value: 1.2738194
+    m_Value: 11.002919
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -598,19 +597,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Sprites/InventoryItems
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Sprites/InventoryItems
+  - Assets
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Oleksandr\Desktop\WIT\Year 3\Semester 1\Game Dev Unity\TheLordOfTheMeows
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 237}
-    m_SelectedIDs: 56260000
-    m_LastClickedID: 9814
-    m_ExpandedIDs: 0000000020260000242600002e2600003c2600004e260000522600007626000084260000882600008c260000be2600004e2800005028000052280000ffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 2a260000
+    m_LastClickedID: 9770
+    m_ExpandedIDs: 000000002a2600002e2600003426000044260000562600005a2600007626000082260000902600009426000098260000cc2600008e2700009027000092270000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -638,7 +637,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000020260000242600002e2600003c2600004e260000522600007626000084260000882600008c260000be2600004e2800005028000052280000ffffff7f
+    m_ExpandedIDs: 000000002a2600002e2600003426000044260000562600005a2600007626000082260000902600009426000098260000cc2600008e2700009027000092270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -669,15 +668,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 0a26000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: ItemDatabase
-      m_OriginalName: ItemDatabase
+      m_Name: PersistentScene
+      m_OriginalName: PersistentScene
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -15356
+      m_UserData: 9928
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0

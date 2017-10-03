@@ -5,23 +5,23 @@ using UnityEngine;
 [RequireComponent(typeof(Character))]
 public class CharacterInventoryModel : MonoBehaviour {
 
-    public Dictionary<ItemType, int> Items;
+    //private Dictionary<ItemType, int> Items;
 
     private Character m_Character;
 
     private void Awake() {
         m_Character = GetComponent<Character>();
-    }
-
-    private void Start() {
-        Items = new Dictionary<ItemType, int>();
+        if(m_Character.Data == null) {
+            Debug.LogError("No Character data found!");
+            enabled = false;
+        }
     }
 
     public int GetItemCount(ItemType itemType) {
 
-        if (!Items.ContainsKey(itemType)) return 0;
+        if (!m_Character.Data.Inventory.Items.ContainsKey(itemType)) return 0;
 
-        return Items[itemType];
+        return m_Character.Data.Inventory.Items[itemType];
     }
 
     public void AddItem(ItemType itemType) {
@@ -32,8 +32,8 @@ public class CharacterInventoryModel : MonoBehaviour {
 
         if (m_Character.Movement.IsFrozen) return;
 
-        if (Items.ContainsKey(itemType)) Items[itemType] += amount;
-        else Items.Add(itemType, amount);
+        if (m_Character.Data.Inventory.Items.ContainsKey(itemType)) m_Character.Data.Inventory.Items[itemType] += amount;
+        else m_Character.Data.Inventory.Items.Add(itemType, amount);
 
         if (m_Character.InventoryView == null) return;
         
@@ -46,10 +46,10 @@ public class CharacterInventoryModel : MonoBehaviour {
 
     public void RemoveItem(ItemType itemType, int amount) {
 
-        if (!Items.ContainsKey(itemType) || m_Character.Movement.IsFrozen) return;
+        if (!m_Character.Data.Inventory.Items.ContainsKey(itemType) || m_Character.Movement.IsFrozen) return;
 
-        if (Items[itemType] > amount) Items[itemType] -= amount;
-        else Items.Remove(itemType);
+        if (m_Character.Data.Inventory.Items[itemType] > amount) m_Character.Data.Inventory.Items[itemType] -= amount;
+        else m_Character.Data.Inventory.Items.Remove(itemType);
 
         if (m_Character.InventoryView == null) return;
        
