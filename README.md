@@ -51,3 +51,9 @@ Further reading :
 - Fix bug of using items, adding items and removing items when character is frozen.
 - Fix bug of ItemDatabase returning null.
 - Use Persistent scene to hold persistent objects (i.e. Character), achieving persistence.
+	
+  
+&nbsp;
+05-10-2017
+- Finish implementing the SceneController script for loading, unloading and changing scenes.
+- Create the GUI for pause menu.
