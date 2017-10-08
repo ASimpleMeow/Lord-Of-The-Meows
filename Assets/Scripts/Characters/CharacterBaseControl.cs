@@ -21,7 +21,6 @@ public class CharacterBaseControl : MonoBehaviour {
         m_Character.Movement.IsRunning = isRunning;
     }
 
-
     //---------INTERACTION CONTROL------------//
     protected void OnActionPressed() {
         if (m_Character.Interaction == null) return;

@@ -57,3 +57,10 @@ Further reading :
 05-10-2017
 - Finish implementing the SceneController script for loading, unloading and changing scenes.
 - Create the GUI for pause menu.
+	
+  
+&nbsp;
+08-10-2017
+- Implement Open/Close menu with time scale adjusting accordingly.
+	- Implement Resume and Exit buttons
+	- Controls with only __E__ key for confirming button and __UP/DOWN__ arrow keys for selection
