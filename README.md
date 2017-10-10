@@ -64,3 +64,8 @@ Further reading :
 - Implement Open/Close menu with time scale adjusting accordingly.
 	- Implement Resume and Exit buttons
 	- Controls with only __E__ key for confirming button and __UP/DOWN__ arrow keys for selection
+	
+  
+&nbsp;
+10-10-2017
+- Import blender created models and setup the first level - Kings Castle

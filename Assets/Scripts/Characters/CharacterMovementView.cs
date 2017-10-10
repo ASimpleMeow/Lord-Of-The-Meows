@@ -14,7 +14,7 @@ public class CharacterMovementView : MonoBehaviour {
         m_Character = GetComponent<Character>();
 
         if (Animator == null) {
-            Debug.LogError("Character Animator is not setup!");
+            //Debug.LogError("Character Animator is not setup!");
             enabled = false;
         }
     }
