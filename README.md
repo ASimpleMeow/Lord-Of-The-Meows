@@ -69,3 +69,8 @@ Further reading :
 &nbsp;
 10-10-2017
 - Import blender created models and setup the first level - Kings Castle
+	
+  
+&nbsp;
+11-10-2017
+- Start building the level, attaching scripts to gameobjects and setting up colliders.

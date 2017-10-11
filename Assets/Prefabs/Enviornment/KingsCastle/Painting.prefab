@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4394248974985490}
   - component: {fileID: 33539515490903872}
   - component: {fileID: 23862394916653206}
+  - component: {fileID: 65476889140283894}
   m_Layer: 0
   m_Name: Painting
   m_TagString: Untagged
@@ -80,3 +81,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1328229659780952}
   m_Mesh: {fileID: 4300000, guid: 45f5e9b5038522746856096e4818ad4a, type: 3}
+--- !u!65 &65476889140283894
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328229659780952}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.66633266, y: 3.1183403, z: 3.3058374}
+  m_Center: {x: 0.33343294, y: 2.1556963e-15, z: 0.6866309}

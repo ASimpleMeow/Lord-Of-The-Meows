@@ -26,17 +26,8 @@ public class CharacterInteractionModel : MonoBehaviour {
         ChoiceBox.HightlightChoice(false);
     }
 
-    /*
-     * Finds a useable interactable object by doing the following:
-     *      - Create a sphere (TODO - Try capsule) to return all close by colliders
-     *      - Loop through the colliders if the gameobject is not interactable, continue
-     *      - Get the direction to interactable
-     *      - Find the angle between character and interactable
-     *      - If angle is acceptable, store that interactable (in case you find a better match)
-     *      - Return best interactable you found
-     */
     private InteractableBase FindUsableInteractable() {
-        Collider[] closeColliders = Physics.OverlapSphere(transform.position, 1.1f);
+        Collider[] closeColliders = Physics.OverlapSphere(transform.position, 1.5f);
         InteractableBase closestInteractable = null;
         float angleToClosestInteractble = Mathf.Infinity;
 

@@ -26,13 +26,6 @@ public class InteractableSign : InteractableBase {
         DisplayNextMessage(character);
     }
 
-    /*
-     * Prepare the messages for display by doing the following:
-     *         - Clear any pre-exising messages in the queue
-     *         - Add the string messages to the message queue
-     *         - Freeze players movement
-     *         - Freeze game time after one frame
-     */
     protected virtual void Init(Character character, string[] messages) {
 
         m_MessageQueue.Clear();

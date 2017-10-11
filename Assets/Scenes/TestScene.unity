@@ -109,6 +109,25 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &10006246 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1383101274884818, guid: 231f6c4e5a6b08b4387a050810852c4b,
+    type: 2}
+  m_PrefabInternal: {fileID: 54331515}
+--- !u!114 &10006250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 10006246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3175eeb8128830e4b9503b4db3ecc1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Messages:
+  - If you look closely, there's a fish pattern on the vase!
+  - Truly a work of art
 --- !u!1001 &54331515
 Prefab:
   m_ObjectHideFlags: 0
@@ -148,9 +167,32 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1383101274884818, guid: 231f6c4e5a6b08b4387a050810852c4b, type: 2}
+      propertyPath: m_Name
+      value: Vase2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 231f6c4e5a6b08b4387a050810852c4b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &191876670 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1328229659780952, guid: c4769317d0c33e548890482bfc82c9fa,
+    type: 2}
+  m_PrefabInternal: {fileID: 1456641075}
+--- !u!114 &191876675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 191876670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3175eeb8128830e4b9503b4db3ecc1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Messages:
+  - What a magnificent painting
+  - But I wonder why the cat in it looks so tall and completely unlike us?
 --- !u!1 &314730023
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +291,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &397652070 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: bf8c07c37e5400743b84ed23d40dffa7, type: 3}
+  m_PrefabInternal: {fileID: 1399745306}
+--- !u!114 &397652071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 397652070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3175eeb8128830e4b9503b4db3ecc1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Messages:
+  - 'Impressive vase!
+
+    It''d be a shame if someone were to...'
+  - '...knock it over...'
+  - Must resist temptation to knock stuff over in the presence of the king!
+--- !u!65 &397652072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 397652070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35, y: 0.34999996, z: 1.0455073}
+  m_Center: {x: 0, y: 0, z: 0.52275366}
 --- !u!1 &628724057
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,6 +693,10 @@ Prefab:
       propertyPath: LightsModule.light
       value: 
       objectReference: {fileID: 1019131457}
+    - target: {fileID: 1250997640586010, guid: a302e33c4522cb349973f7d9f04d4de8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64736406153220174, guid: a302e33c4522cb349973f7d9f04d4de8, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a302e33c4522cb349973f7d9f04d4de8, type: 2}
@@ -687,6 +766,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 15.672001, y: -9.712001, z: 15.080001}
+--- !u!1 &1290809325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1290809326}
+  - component: {fileID: 1290809328}
+  - component: {fileID: 1290809327}
+  m_Layer: 0
+  m_Name: KingCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1290809326
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1290809325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1925600515}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1290809327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1290809325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3175eeb8128830e4b9503b4db3ecc1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Messages:
+  - 'King: "Are you lost or something? The first level is not complete yet!"'
+  - 'You: "Oh sorry your moew-jesty, I''ll be on my way"'
+--- !u!65 &1290809328
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1290809325}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.6651335, y: 1.6202469, z: 4.922364}
+  m_Center: {x: -0.008436203, y: 0.44706917, z: -1.0482054}
 --- !u!1 &1312059527
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,7 +1111,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 9c7479841489fc849885e4828f011be5, type: 2}
     - target: {fileID: 100000, guid: bf8c07c37e5400743b84ed23d40dffa7, type: 3}
       propertyPath: m_Name
-      value: Vase2
+      value: Vase1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf8c07c37e5400743b84ed23d40dffa7, type: 3}
@@ -1019,6 +1154,16 @@ Prefab:
     - target: {fileID: 4394248974985490, guid: c4769317d0c33e548890482bfc82c9fa, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 65476889140283894, guid: c4769317d0c33e548890482bfc82c9fa,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1.0744576
+      objectReference: {fileID: 0}
+    - target: {fileID: 65476889140283894, guid: c4769317d0c33e548890482bfc82c9fa,
+        type: 2}
+      propertyPath: m_Center.x
+      value: 0.5374954
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4769317d0c33e548890482bfc82c9fa, type: 2}
@@ -1205,6 +1350,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e6353fceb70067945825d17d828a2d3e, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1925600515 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4909084643581068, guid: 6d288768c0a18234fb4a92ca5c92c5ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 2062887828}
 --- !u!1 &2013090270 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1189704102642724, guid: a302e33c4522cb349973f7d9f04d4de8,
@@ -1222,6 +1372,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 40.326153, y: 0.524668, z: 69.92491}
   m_Center: {x: -0.0358181, y: -0.25694597, z: 0.0035095215}
+--- !u!65 &2013090273
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2013090270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 31.682861, y: 11.108558, z: 1}
+  m_Center: {x: -3.384274, y: 5.054279, z: -34.85}
+--- !u!65 &2013090274
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2013090270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.6044197, y: 11.032038, z: 70.22092}
+  m_Center: {x: 16.30221, y: 5.016019, z: -0.00001335144}
+--- !u!65 &2013090275
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2013090270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7925987, y: 11.095101, z: 70.22081}
+  m_Center: {x: -19.607756, y: 5.0475507, z: 0.000030517578}
 --- !u!1001 &2062887828
 Prefab:
   m_ObjectHideFlags: 0
