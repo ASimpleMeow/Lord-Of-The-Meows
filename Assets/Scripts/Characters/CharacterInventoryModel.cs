@@ -72,7 +72,9 @@ public class CharacterInventoryModel : MonoBehaviour {
                 break;
             case ItemType.COIN:
                 Debug.Log("Used Coin");
-                RemoveItem(ItemType.COIN, 1);
+                if (m_Character.Interaction == null) return;
+                m_Character.Interaction.OnExchange(ItemType.COIN);
+                //RemoveItem(ItemType.COIN, 1);
                 break;
         }
     }
