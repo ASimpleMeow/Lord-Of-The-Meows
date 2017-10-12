@@ -74,3 +74,8 @@ Further reading :
 &nbsp;
 11-10-2017
 - Start building the level, attaching scripts to gameobjects and setting up colliders.
+	
+  
+&nbsp;
+12-10-2017
+- Implement InteractableExchange script for possible quest/shops
