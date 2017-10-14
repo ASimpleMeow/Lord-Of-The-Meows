@@ -206,21 +206,21 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223412460747392434, guid: a0eb85b0888d2eb45b50ada889142254,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 830892640}
-    - target: {fileID: 114858383793819838, guid: a0eb85b0888d2eb45b50ada889142254,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1684080588}
     - target: {fileID: 114957050084887482, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1684080588}
+    - target: {fileID: 114858383793819838, guid: a0eb85b0888d2eb45b50ada889142254,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1684080588}
+    - target: {fileID: 223412460747392434, guid: a0eb85b0888d2eb45b50ada889142254,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 830892640}
     - target: {fileID: 224394038925034978, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
       propertyPath: m_AnchorMin.y

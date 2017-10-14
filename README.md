@@ -88,3 +88,4 @@ Further reading :
 - Create and import a WoodenSign asset and position it in the KingsCastle level.
 - Change Kings dialog from InteractableSign to InteractableSignChoice to demo the choice system.
 - Minor text changes in InteractableSign's (to added better jokes and puns) and repositioning some GameObjects.
+- Create better sprites and added them to the game.
