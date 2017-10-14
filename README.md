@@ -68,7 +68,7 @@ Further reading :
   
 &nbsp;
 10-10-2017
-- Import blender created models and setup the first level - Kings Castle
+- Import blender created models and setup the first level - Kings Castle.
 	
   
 &nbsp;
@@ -78,4 +78,13 @@ Further reading :
   
 &nbsp;
 12-10-2017
-- Implement InteractableExchange script for possible quest/shops
+- Implement InteractableExchange script for possible quest/shops.
+	
+  
+&nbsp;
+14-10-2017
+- Extend the functionality of InteractableChest and InteractableExchange to feature optional InteractableSign's - i.e When chest is open a dialog is displayed to tell you what you got, and when an already chest is interacted with, it tells you that the chest is already empty.
+- Fix InteractableSign bug when if the player presses __E__ key to skip dialog, the player becomes unfrozen before the dialog box disappears.
+- Create and import a WoodenSign asset and position it in the KingsCastle level.
+- Change Kings dialog from InteractableSign to InteractableSignChoice to demo the choice system.
+- Minor text changes in InteractableSign's (to added better jokes and puns) and repositioning some GameObjects.

@@ -11,8 +11,11 @@ public class InteractableChest : InteractableBase {
     [SerializeField]
     private int Amount;
     [SerializeField]
-    private bool m_IsOpen;
+    private InteractableSign ClosedChestMessage;
+    [SerializeField]
+    private InteractableSign OpenedChestMessage;
 
+    private bool m_IsOpen;
     private MeshFilter m_MeshFilter;
 
     private void Awake() {
@@ -25,7 +28,10 @@ public class InteractableChest : InteractableBase {
 
     public override void OnInteract(Character character) {
 
-        if (m_IsOpen) return;
+        if (m_IsOpen) {
+            if(OpenedChestMessage != null) OpenedChestMessage.OnInteract(character);
+            return;
+        }
 
         m_IsOpen = true;
 
@@ -33,5 +39,6 @@ public class InteractableChest : InteractableBase {
 
         if (OpenChestMesh == null) return;
         m_MeshFilter.mesh = OpenChestMesh;
+        if (ClosedChestMessage != null) ClosedChestMessage.OnInteract(character);
     }
 }

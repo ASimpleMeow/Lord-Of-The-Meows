@@ -5,6 +5,8 @@ using UnityEngine;
 public class InteractableExchange : InteractableBase {
 
     [SerializeField]
+    private InteractableBase AnotherInteractable;
+    [SerializeField]
     private ItemType ItemNeeded;
     [SerializeField]
     private int AmountNeeded;
@@ -12,6 +14,11 @@ public class InteractableExchange : InteractableBase {
     private ItemType ItemGiven;
     [SerializeField]
     private int AmountGiven;
+
+    public override void OnInteract(Character character) {
+        if (AnotherInteractable == null) return;
+        AnotherInteractable.OnInteract(character);
+    }
 
     public override void OnUse(Character character, ItemType itemType) {
         if (character.Inventory == null || character.Data == null) return;

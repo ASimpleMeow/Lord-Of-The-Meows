@@ -18,7 +18,7 @@ public class CharacterInteractionModel : MonoBehaviour {
 
     public void OnInteract() {
         InteractableBase usableInteractable = FindUsableInteractable();
-        if (usableInteractable == null || usableInteractable is InteractableExchange) return;
+        if (usableInteractable == null) return;
 
         usableInteractable.OnInteract(m_Character);
     }

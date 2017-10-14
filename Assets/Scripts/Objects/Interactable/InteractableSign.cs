@@ -39,6 +39,7 @@ public class InteractableSign : InteractableBase {
     protected virtual void DisplayNextMessage(Character character) {
         
         if (m_MessageQueue.Count == 0) {
+            if (m_TypeMessageCoroutine != null) StopCoroutine(m_TypeMessageCoroutine);
             EndInteraction(character);
             return;
         }
@@ -53,7 +54,7 @@ public class InteractableSign : InteractableBase {
     protected void EndInteraction(Character character) {
         Time.timeScale = 1;
         character.Movement.IsFrozen = false;
-        DialogBox.Hide();
+        if (DialogBox.IsVisible()) DialogBox.Hide();
         if (ChoiceBox.IsVisible()) ChoiceBox.Hide();
         m_TypeMessageCoroutine = null;
     }
