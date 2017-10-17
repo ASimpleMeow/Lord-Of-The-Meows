@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 114686812193478724}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1417,6 +1417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f37021a30f3644ba9cf001fed30864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DetectionRadius: 1.5
+  DetectionAngle: 75
 --- !u!114 &114867930623726146
 MonoBehaviour:
   m_ObjectHideFlags: 1

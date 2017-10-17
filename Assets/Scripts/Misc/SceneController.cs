@@ -15,7 +15,7 @@ public class SceneController : MonoBehaviour {
         if (m_GameStart) return;
 
         m_Instance = this;
-        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+        LoadScene(1);
         m_GameStart = true;
     }
 
