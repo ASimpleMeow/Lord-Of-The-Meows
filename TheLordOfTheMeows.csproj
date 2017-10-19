@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Characters\Character.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterBaseControl.cs" />
+    <Compile Include="Assets\Scripts\Characters\CharacterHealthModel.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterInteractionModel.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterInventoryModel.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterInventoryView.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Assets\Scripts\Interfaces\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ChoiceBox.cs" />
     <Compile Include="Assets\Scripts\Interfaces\DialogBox.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\HealthUI.cs" />
     <Compile Include="Assets\Scripts\Interfaces\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Misc\Enums.cs" />
     <Compile Include="Assets\Scripts\Misc\SceneController.cs" />

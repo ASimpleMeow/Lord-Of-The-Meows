@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 public class DialogBox : MonoBehaviour {
 
-    private static DialogBox Instance;
+    private static DialogBox m_Instance;
 
     private Image m_DialogFrame;
     private Text m_Text;
 
     private void Awake() {
-        Instance = this;
+        m_Instance = this;
 
         m_DialogFrame = GetComponent<Image>();
         m_Text = GetComponentInChildren<Text>();
@@ -17,19 +17,19 @@ public class DialogBox : MonoBehaviour {
 
     //---------STATIC FUNCTIONS------------//
     public static void Show(string displayText) {
-        Instance.DoShow(displayText);
+        m_Instance.DoShow(displayText);
     }
 
     public static void Hide() {
-        Instance.DoHide();
+        m_Instance.DoHide();
     }
 
     public static bool IsVisible() {
-        return Instance.m_DialogFrame.enabled;
+        return m_Instance.m_DialogFrame.enabled;
     }
 
     public static string GetText() {
-        return Instance.m_Text.text;
+        return m_Instance.m_Text.text;
     }
 
 

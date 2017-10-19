@@ -95,3 +95,9 @@ Further reading :
 17-10-2017
 - Fix duplicate KingsCastle scene loading bug
 - Create SpawnPoint gameobject and script to specify Character spawn location and camera movement boolean.
+	
+  
+&nbsp;
+19-10-2017
+- Add Health and Powerup HUD
+- Create CharacterHealthModel for adding/damaging health
