@@ -101,3 +101,10 @@ Further reading :
 19-10-2017
 - Add Health and Powerup HUD
 - Create CharacterHealthModel for adding/damaging health
+	
+  
+&nbsp;
+21-10-2017
+- Create House and Tree models, texture them and import into Unity
+- Layout the village Level
+- Improve SpawnPoint script to allow for Camera options for different spawn points

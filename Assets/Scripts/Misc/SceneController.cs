@@ -5,7 +5,10 @@ using System;
 
 public class SceneController : MonoBehaviour {
 
-    public static SceneController m_Instance;
+    [SerializeField]
+    private int StartSceneIndex;
+
+    public static SceneController Instance;
     private bool m_GameStart;
 
     private AsyncOperation m_LoadingOperation;
@@ -14,8 +17,8 @@ public class SceneController : MonoBehaviour {
     private void Awake() {
         if (m_GameStart) return;
 
-        m_Instance = this;
-        LoadScene(1);
+        Instance = this;
+        LoadScene(StartSceneIndex);
         m_GameStart = true;
     }
 

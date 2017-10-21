@@ -4,15 +4,13 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class CameraMovement : MonoBehaviour {
 
+    public float OffsetX;
+    public float OffsetZ;
+    public float Speed;
+
     // Inspector fields
     [SerializeField]
     private Transform Target;
-    [SerializeField]
-    private float OffsetX;
-    [SerializeField]
-    private float OffsetZ;
-    [SerializeField]
-    private float Speed;
 
     private Vector3 m_NewPosition;
 

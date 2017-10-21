@@ -51,6 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641f7c223c0d86340a4f48567effe3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Character: {fileID: 0}
-  CameraMovement: {fileID: 0}
-  EnableCameraMovement: 0
+  CameraMovement: 1
+  CameraPosition: {x: 6.2, y: 9.753, z: 8.257101}
+  CameraOffsetX: 6.2
+  CameraOffsetZ: 8.3
+  CameraRotation: {x: 26.615, y: -133.442, z: 0}
