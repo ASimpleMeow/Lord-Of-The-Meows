@@ -108,3 +108,9 @@ Further reading :
 - Create House and Tree models, texture them and import into Unity
 - Layout the village Level
 - Improve SpawnPoint script to allow for Camera options for different spawn points
+	
+  
+&nbsp;
+22-10-2017
+- Create Idle, Walking and Running animations for Character
+- Set up the AnimationController and append the changes to CharacterMovementView script

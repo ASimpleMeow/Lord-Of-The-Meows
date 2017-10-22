@@ -48,7 +48,7 @@ public class CharacterMovementModel : MonoBehaviour {
 
         // Let physics engine handle movement (and gravity of y coordinate)
         Vector3 velocity = new Vector3((m_MovementDirection.x * (IsRunning ? RunSpeed : WalkSpeed)),
-                                        m_Body.velocity.y,
+                                        m_Body.velocity.y * Time.deltaTime,
                                         (m_MovementDirection.z * (IsRunning ? RunSpeed : WalkSpeed)));
         m_Body.velocity = velocity;
     }
@@ -74,17 +74,16 @@ public class CharacterMovementModel : MonoBehaviour {
 
     //---------GETTERS/SETTERS------------//
 
-    public Vector3 GetDirection() { return m_MovementDirection; }
-
-    public Vector3 GetFacingDirection() { return m_FacingDirection; }
-
-    public bool IsMoving() {
-        if (IsFrozen) return false;
-        return m_MovementDirection != Vector3.zero;
-    }
-
     public bool IsRunning { get; set; }
 
     public bool IsFrozen { get; set; }
+
+    public float Velocity {
+        get { return m_Body.velocity.magnitude; }
+    }
+
+    public float MaxVelocity {
+        get { return RunSpeed; }
+    }
 
 }

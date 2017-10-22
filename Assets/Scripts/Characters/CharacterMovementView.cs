@@ -7,6 +7,8 @@ public class CharacterMovementView : MonoBehaviour {
     // Inspector fields
     [SerializeField]
     private Animator Animator;
+    [SerializeField]
+    private float DampTime = 0.1f;
 
     private Character m_Character;
 
@@ -14,23 +16,19 @@ public class CharacterMovementView : MonoBehaviour {
         m_Character = GetComponent<Character>();
 
         if (Animator == null) {
-            //Debug.LogError("Character Animator is not setup!");
+            Debug.LogError("Character Animator is not setup!");
             enabled = false;
         }
     }
 
 	private void Update () {
-        UpdateDirection();
+        UpdateMovement();
 	}
 
-    private void UpdateDirection() {
-        Vector3 direction = m_Character.Movement.GetDirection();
+    private void UpdateMovement() {
+        if (m_Character.Movement == null) return;
+        float velocityPercentage = m_Character.Movement.Velocity / m_Character.Movement.MaxVelocity;
 
-        if (direction != Vector3.zero) {
-            Animator.SetFloat("DirectionX", direction.x);
-            Animator.SetFloat("DirectionY", direction.y);
-        }
-
-        Animator.SetBool("IsMoving", m_Character.Movement.IsMoving());
+        Animator.SetFloat("VelocityPercent", velocityPercentage, DampTime, Time.deltaTime);
     }
 }
