@@ -4,6 +4,8 @@ using UnityEngine;
 public class CharacterSpawn : MonoBehaviour {
 
     [SerializeField]
+    private int FromSceneIndex;
+    [SerializeField]
     private bool CameraMovement;
     [SerializeField]
     private Vector3 CameraPosition;
@@ -19,6 +21,7 @@ public class CharacterSpawn : MonoBehaviour {
     private GameObject m_Camera;
 
     private void Awake() {
+        if (FromSceneIndex != SceneController.Instance.LastScene) return;
         PersistentScene = SceneManager.GetSceneAt(0);
         m_Character = PersistentScene.GetRootGameObjects()[0];
         m_Camera = PersistentScene.GetRootGameObjects()[1];
