@@ -48,7 +48,7 @@ public class CharacterMovementModel : MonoBehaviour {
 
         // Let physics engine handle movement (and gravity of y coordinate)
         Vector3 velocity = new Vector3((m_MovementDirection.x * (IsRunning ? RunSpeed : WalkSpeed)),
-                                        m_Body.velocity.y * Time.deltaTime,
+                                        m_Body.velocity.y,
                                         (m_MovementDirection.z * (IsRunning ? RunSpeed : WalkSpeed)));
         m_Body.velocity = velocity;
     }

@@ -7,10 +7,4 @@ public class Character : MonoBehaviour {
     public CharacterInventoryModel Inventory;
     public CharacterInventoryView InventoryView;
     public CharacterData Data;
-
-    private void Awake() {
-        if(Data == null) {
-            Debug.LogError("NO CHARACTER DATA!", gameObject);
-        }
-    }
 }

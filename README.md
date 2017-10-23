@@ -115,3 +115,9 @@ Further reading :
 - Create Idle, Walking and Running animations for Character
 - Set up the AnimationController and append the changes to CharacterMovementView script
 - Allow for multiple SpawnPoints in a scene - the previous scene you where in dictates the spawnpoint of the scene to be loaded
+	
+  
+&nbsp;
+23-10-2017
+- Create CharacterVillagerController script for controller NPC villager movement
+- Begin placing NPC's and creating dialog for them and other interactions

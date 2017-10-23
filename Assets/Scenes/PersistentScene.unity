@@ -206,21 +206,21 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223412460747392434, guid: a0eb85b0888d2eb45b50ada889142254,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 830892640}
-    - target: {fileID: 114858383793819838, guid: a0eb85b0888d2eb45b50ada889142254,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1684080588}
     - target: {fileID: 114957050084887482, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1684080588}
+    - target: {fileID: 114858383793819838, guid: a0eb85b0888d2eb45b50ada889142254,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1684080588}
+    - target: {fileID: 223412460747392434, guid: a0eb85b0888d2eb45b50ada889142254,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 830892640}
     - target: {fileID: 224394038925034978, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
       propertyPath: m_AnchorMin.y
@@ -239,7 +239,7 @@ Prefab:
     - target: {fileID: 224394038925034978, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -37.5
       objectReference: {fileID: 0}
     - target: {fileID: 224629701111216050, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
@@ -259,7 +259,7 @@ Prefab:
     - target: {fileID: 224629701111216050, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -37.5
       objectReference: {fileID: 0}
     - target: {fileID: 224662788229620786, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
@@ -279,7 +279,7 @@ Prefab:
     - target: {fileID: 224662788229620786, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -37.5
       objectReference: {fileID: 0}
     - target: {fileID: 224157416326747348, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
@@ -299,7 +299,7 @@ Prefab:
     - target: {fileID: 224157416326747348, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -37.5
       objectReference: {fileID: 0}
     - target: {fileID: 224120962662786410, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
@@ -319,7 +319,7 @@ Prefab:
     - target: {fileID: 224120962662786410, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -37.5
       objectReference: {fileID: 0}
     - target: {fileID: 224055226594459598, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
@@ -339,7 +339,7 @@ Prefab:
     - target: {fileID: 224055226594459598, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -37.5
       objectReference: {fileID: 0}
     - target: {fileID: 224894663331110826, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
@@ -359,19 +359,13 @@ Prefab:
     - target: {fileID: 224894663331110826, guid: a0eb85b0888d2eb45b50ada889142254,
         type: 2}
       propertyPath: m_AnchoredPosition.y
+      value: -37.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114599361580892218, guid: a0eb85b0888d2eb45b50ada889142254,
+        type: 2}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114988507201492738, guid: a0eb85b0888d2eb45b50ada889142254,
-        type: 2}
-      propertyPath: m_Spacing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114601891250128762, guid: a0eb85b0888d2eb45b50ada889142254,
-        type: 2}
-      propertyPath: HealthSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c9902a32448a4824d82835295ecb0d00,
-        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0eb85b0888d2eb45b50ada889142254, type: 2}
   m_IsPrefabParent: 0
@@ -460,6 +454,18 @@ GameObject:
   m_PrefabParentObject: {fileID: 1989175431037372, guid: 92a148fca1eb9cc44b53b17a00bb8764,
     type: 2}
   m_PrefabInternal: {fileID: 1426090677}
+--- !u!114 &686911907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 686911906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e4aca3c94d9a1b4ab421ba4c365934a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeImage: {fileID: 2122226796}
 --- !u!114 &686911909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,12 +534,22 @@ Prefab:
     - target: {fileID: 114699386832567770, guid: 92a148fca1eb9cc44b53b17a00bb8764,
         type: 2}
       propertyPath: StartSceneIndex
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114699386832567770, guid: 92a148fca1eb9cc44b53b17a00bb8764,
         type: 2}
       propertyPath: ScreenFade
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114699386832567770, guid: 92a148fca1eb9cc44b53b17a00bb8764,
+        type: 2}
+      propertyPath: ScreenFadeSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114699386832567770, guid: 92a148fca1eb9cc44b53b17a00bb8764,
+        type: 2}
+      propertyPath: ScreenFadeDelta
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92a148fca1eb9cc44b53b17a00bb8764, type: 2}
@@ -631,3 +647,9 @@ Animator:
   m_PrefabParentObject: {fileID: 95832006416348850, guid: 1403f7e283c6f1d458c183ceef61e7fe,
     type: 2}
   m_PrefabInternal: {fileID: 1435356432}
+--- !u!114 &2122226796 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114599361580892218, guid: a0eb85b0888d2eb45b50ada889142254,
+    type: 2}
+  m_PrefabInternal: {fileID: 205284722}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}

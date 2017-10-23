@@ -2,12 +2,15 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
-using UnityEngine.UI;
 
 public class SceneController : MonoBehaviour {
 
     [SerializeField]
     private int StartSceneIndex;
+    [SerializeField]
+    private float ScreenFadeSpeed = 30;
+    [SerializeField]
+    private float ScreenTransistionTime = 1;
 
     public static SceneController Instance;
 
@@ -16,6 +19,9 @@ public class SceneController : MonoBehaviour {
 
     private AsyncOperation m_LoadingOperation;
     private AsyncOperation m_UnloadingOperation;
+
+    private Coroutine m_Load;
+    private Coroutine m_Unload;
 
     private void Awake() {
         if (m_GameStart) return;
@@ -39,71 +45,41 @@ public class SceneController : MonoBehaviour {
         LoadScene(loadScene);
     }
 
-    public void ChangeScene(string thisScene, string loadScene) {
-        if (thisScene == loadScene) return;
-        m_LastScene = SceneManager.GetSceneByName(thisScene).buildIndex;
-        UnloadScene(thisScene);
-        LoadScene(loadScene);
-    }
-
-
     //---------LOAD SCENE------------//
     public void LoadScene(int scene) {
         for (int i = 0; i < SceneManager.sceneCount; ++i)
             if (SceneManager.GetSceneAt(i).buildIndex == scene) return;
 
-        StartCoroutine(Load(scene));
-    }
-
-    public void LoadScene(string scene) {
-
-        for (int i = 0; i < SceneManager.sceneCount; ++i)
-            if (SceneManager.GetSceneAt(i).name.Equals(scene)) return;
-
-        StartCoroutine(Load(scene));
+        if (m_Load != null) StopCoroutine(m_Load);
+        m_Load = StartCoroutine(Load(scene));
     }
 
 
     //---------UNLOAD SCENE------------//
     public void UnloadScene(int scene) {
-        StartCoroutine(Unload(scene));
-    }
-
-    public void UnloadScene(string scene) {
-        StartCoroutine(Unload(scene));
+        if (m_Unload != null) StopCoroutine(m_Unload);
+        m_Unload = StartCoroutine(Unload(scene));
     }
 
 
     //---------COROUTINES------------//
     IEnumerator Load(int scene) {
-        if (m_UnloadingOperation != null) yield return m_UnloadingOperation;
-        else yield return null;
+        yield return m_Unload;
 
         m_LoadingOperation = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
         yield return m_LoadingOperation;
-    }
-
-    IEnumerator Load(string scene) {
-        if (m_UnloadingOperation != null) yield return m_UnloadingOperation;
-        else yield return null;
-
-        m_LoadingOperation = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
-        yield return m_LoadingOperation;
+        if (m_LoadingOperation.isDone) FadeScreen.Fade(-1, ScreenFadeSpeed);
     }
 
     IEnumerator Unload(int scene) {
-        yield return null;
+        FadeScreen.Fade(1, ScreenFadeSpeed);
+        yield return new WaitForSeconds(ScreenTransistionTime);
 
         try { m_UnloadingOperation = SceneManager.UnloadSceneAsync(scene); }
-        catch (Exception) { yield break; }
-        yield return m_UnloadingOperation;
-    }
-
-    IEnumerator Unload(string scene) {
-        yield return null;
-
-        try { m_UnloadingOperation = SceneManager.UnloadSceneAsync(scene); }
-        catch (Exception) { yield break; }
+        catch (Exception) {
+            FadeScreen.Fade(-1, 100);
+            yield break;
+        }
         yield return m_UnloadingOperation;
     }
 
