@@ -7,7 +7,7 @@ public class ChoiceDialog : ChoiceBase {
     // Inspector field
     [SerializeField]
     [TextArea(3, 10)]
-    private string[] Messages;
+    protected string[] Messages;
 
     public override void OnExecute(Character character) {
         if (m_SignChoice == null) return;

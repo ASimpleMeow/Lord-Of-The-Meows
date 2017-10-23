@@ -94,12 +94,14 @@
     <Compile Include="Assets\Scripts\Interfaces\HealthUI.cs" />
     <Compile Include="Assets\Scripts\Interfaces\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Misc\Enums.cs" />
+    <Compile Include="Assets\Scripts\Misc\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\Misc\SceneController.cs" />
     <Compile Include="Assets\Scripts\NPC\CharacterVillagerController.cs" />
     <Compile Include="Assets\Scripts\Objects\CharacterSpawn.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\Choices\ChoiceBase.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\Choices\ChoiceDialog.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\Choices\ChoiceExit.cs" />
+    <Compile Include="Assets\Scripts\Objects\Interactable\Choices\ChoiceRemoveObject.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableBase.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableChest.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableExchange.cs" />

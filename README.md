@@ -121,3 +121,5 @@ Further reading :
 23-10-2017
 - Create CharacterVillagerController script for controller NPC villager movement
 - Begin placing NPC's and creating dialog for them and other interactions
+- Implement ChoiceRemoveObject to allow for Choices to remove a GameObject (PlotBarrier) and allow for story progression
+- Implement SceneChanger to change scenes on Trigger

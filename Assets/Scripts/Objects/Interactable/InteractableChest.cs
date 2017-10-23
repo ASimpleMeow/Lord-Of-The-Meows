@@ -37,8 +37,7 @@ public class InteractableChest : InteractableBase {
 
         character.Inventory.AddItem(Item, Amount);
 
-        if (OpenChestMesh == null) return;
-        m_MeshFilter.mesh = OpenChestMesh;
+        if (OpenChestMesh != null) m_MeshFilter.mesh = OpenChestMesh;
         if (ClosedChestMessage != null) ClosedChestMessage.OnInteract(character);
     }
 }
