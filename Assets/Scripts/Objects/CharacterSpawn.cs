@@ -1,8 +1,11 @@
 ﻿using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterSpawn : MonoBehaviour {
 
+    [SerializeField]
+    private List<Object> ToRemoveOnLoad;
     [SerializeField]
     private int FromSceneIndex;
     [SerializeField]
@@ -35,6 +38,11 @@ public class CharacterSpawn : MonoBehaviour {
             if (CameraOffsetX != 0) m_Camera.GetComponent<CameraMovement>().OffsetX = CameraOffsetX;
             if (CameraOffsetZ != 0) m_Camera.GetComponent<CameraMovement>().OffsetZ = CameraOffsetZ;
             if (CameraRotation != new Vector3(0, 0, 0)) m_Camera.transform.eulerAngles = CameraRotation;
+        }
+
+        if (ToRemoveOnLoad == null) return;
+        foreach (Object o in ToRemoveOnLoad) {
+            Destroy(o);
         }
     }
 }

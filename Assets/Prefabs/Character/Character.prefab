@@ -1443,6 +1443,7 @@ MonoBehaviour:
   MovementView: {fileID: 114918646044204882}
   Inventory: {fileID: 114375920666934496}
   InventoryView: {fileID: 114612672239772104}
+  Health: {fileID: 114477228909843650}
   Data: {fileID: 11400000, guid: 65ec739563ad6d040a6c5c387b1f4290, type: 2}
 --- !u!114 &114477228909843650
 MonoBehaviour:
@@ -1455,7 +1456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb00643df6748f46b4501311e45f1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 9
 --- !u!114 &114612672239772104
 MonoBehaviour:
   m_ObjectHideFlags: 1

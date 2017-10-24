@@ -12,7 +12,6 @@ public class CharacterInventoryView : MonoBehaviour {
     private Character m_Character;
 
     private List<ItemSlot> m_ItemSlots;
-    private int m_EmptySlots;
     private int m_SelectedIndex;
 
     private void Awake() {
@@ -32,15 +31,15 @@ public class CharacterInventoryView : MonoBehaviour {
     }
 
     private void Start() {
-
-        //Populate the InventoryBox
-        foreach(ItemType key in m_Character.Data.Inventory.Items.Keys) {
-            AddItem(key, m_Character.Data.Inventory.Items[key]);
-        }
-
         m_SelectedIndex = 0;
-        m_EmptySlots = m_ItemSlots.Count;
         PreviousItem();
+    }
+
+    private void Update() {
+        for (int i = 0; i < m_Character.Data.Inventory.Keys.Count; ++i) {
+            ItemType type = m_Character.Data.Inventory.Keys[i];
+            m_ItemSlots[i].SetItem(type, m_Character.Data.Inventory.ItemAmount(type));
+        }
     }
 
     //---------SELECTING ITEMS------------//
@@ -64,40 +63,5 @@ public class CharacterInventoryView : MonoBehaviour {
         }
 
         return ItemType.NONE;
-    }
-
-    public void AddItem(ItemType itemType, int amount) {
-
-        foreach (ItemSlot slot in m_ItemSlots) {
-            if (slot.Type == itemType) {
-                slot.AddItem(itemType, amount);
-                return;
-            }
-        }
-
-        //itemType not found in the current inventory, add in a new place
-        PlaceEmpty(itemType, amount);
-    }
-
-    public void RemoveItem(ItemType itemType, int amount) {
-        foreach (ItemSlot slot in m_ItemSlots) {
-            if (slot.Type == itemType) {
-                slot.RemoveItem(amount);
-            }
-        }
-    }
-
-    private bool PlaceEmpty(ItemType itemType, int amount) {
-        if (m_EmptySlots == 0) return false;
-
-        foreach (ItemSlot slot in m_ItemSlots) {
-            if (slot.IsEmpty) {
-                slot.AddItem(itemType, amount);
-                m_EmptySlots--;
-                return true;
-            }
-        }
-
-        return false;
     }
 }

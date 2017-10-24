@@ -24,31 +24,13 @@ public class ItemSlot : MonoBehaviour {
         IsSelected = false;
     }
 
-    public void AddItem(ItemType itemType) {
-        AddItem(itemType, 1);
-    }
-
-    public void AddItem(ItemType itemType, int amount) {
+    public void SetItem(ItemType itemType, int amount) {
         m_ItemType = itemType;
-        m_Amount += amount;
+        m_Amount = amount;
 
         SetSprite(Database.Item.FindItem(m_ItemType).ItemSprite);
         if (m_Amount > 1) m_StackText.text = m_Amount.ToString();
         else m_StackText.text = "";
-    }
-
-    public void RemoveItem(int amount) {
-        m_Amount -= amount;
-        if (m_Amount > 1) m_StackText.text = m_Amount.ToString();
-        else if (m_Amount == 1) m_StackText.text = "";
-        else RemoveItem();
-    }
-
-    public void RemoveItem() {
-        m_ItemType = ItemType.NONE;
-        m_Amount = 0;
-        SetSprite(null);
-        m_StackText.text = "";
     }
 
     public bool IsEmpty {

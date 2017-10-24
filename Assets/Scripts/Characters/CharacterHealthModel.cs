@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Character))]
 public class CharacterHealthModel : MonoBehaviour {
 
-    [SerializeField]
-    private int StartingHealth;
+    private Character m_Character;
 
-    private int m_Health;
-    private int m_MaxHealth;
+    public const int m_MaxHealth = 9;
 
-	void Start () {
-        m_Health = StartingHealth;
-        m_MaxHealth = StartingHealth;
+    private void Awake() {
+        m_Character = GetComponent<Character>();
+    }
 
-        HealthUI.UpdateHealth(m_Health, m_MaxHealth);
+    void Start () {
+        HealthUI.UpdateHealth(m_Character.Data.Health, m_MaxHealth);
     }
 
 	void Update () {
@@ -22,39 +22,39 @@ public class CharacterHealthModel : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Y)) AddHealth(1);
     }
 
-    public int Health {
-        get { return m_Health; }
-    }
-
     public int MaxHealth {
         get { return m_MaxHealth; }
     }
 
-    public void DealDamage(int damage) {
-        if (m_Health <= 0) return;
+    public bool DealDamage(int damage) {
+        if (m_Character.Data.Health <= 0) return false;
 
-        m_Health -= damage;
+        m_Character.Data.Health -= damage;
 
-        HealthUI.UpdateHealth(m_Health, m_MaxHealth);
+        HealthUI.UpdateHealth(m_Character.Data.Health, m_MaxHealth);
 
-        if(m_Health <= 0) {
-            m_Health = 0;
+        if(m_Character.Data.Health <= 0) {
+            m_Character.Data.Health = 0;
             Debug.Log("You Died");
         }
+
+        return true;
     }
 
-    public void AddHealth(int amount) {
+    public bool AddHealth(int amount) {
         Debug.Log("Add health " + amount);
-        if (m_Health == m_MaxHealth) return;
+        if (m_Character.Data.Health == m_MaxHealth) return false;
 
-        if(m_Health + amount > m_MaxHealth) {
+        if(m_Character.Data.Health + amount > m_MaxHealth) {
             Debug.Log("to max");
-            m_Health = m_MaxHealth;
+            m_Character.Data.Health = m_MaxHealth;
         } else {
             Debug.Log("just add");
-            m_Health += amount;
+            m_Character.Data.Health += amount;
         }
 
-        HealthUI.UpdateHealth(m_Health, m_MaxHealth);
+        HealthUI.UpdateHealth(m_Character.Data.Health, m_MaxHealth);
+
+        return true;
     }
 }

@@ -11,3 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0b99f7a33b63748bbeb6ab869fe62f, type: 3}
   m_Name: CharacterDataAsset
   m_EditorClassIdentifier: 
+  m_Inventory:
+    m_ItemTypes: 6400000032000000
+    m_ItemAmount: 3200000002000000
+  m_Health: 6
+  m_Level: 0
+  m_Position: {x: 0, y: 0, z: 0}

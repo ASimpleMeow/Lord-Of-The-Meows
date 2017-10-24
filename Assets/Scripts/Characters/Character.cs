@@ -6,5 +6,6 @@ public class Character : MonoBehaviour {
     public CharacterMovementView MovementView;
     public CharacterInventoryModel Inventory;
     public CharacterInventoryView InventoryView;
+    public CharacterHealthModel Health;
     public CharacterData Data;
 }

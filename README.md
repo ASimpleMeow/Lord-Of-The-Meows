@@ -130,3 +130,5 @@ Further reading :
 - Create a Scarf for the Character
 - Implement Cloth physics for the Scarf on Character
 - Implement InteractableSignRemove to remove an object after interaction
+- Implement game retaining data even after exiting
+- Remake the inventory for easier serialization (using two Lists instead of a Dictionary)

@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour {
 
     private int m_SelectedIndex;
     private Button[] m_MenuButtons;
+    private bool m_TimePaused;
 
     private void Awake() {
         if(Character == null) {
@@ -58,7 +59,12 @@ public class PauseMenu : MonoBehaviour {
     public void OnMenuButton() {
         Menu.SetActive(!Menu.activeInHierarchy);
         Character.GetComponent<CharacterKeyboardControl>().enabled = !Menu.activeInHierarchy;
-        StartCoroutine(PauseGame(Menu.activeInHierarchy));
+        if (Menu.activeInHierarchy) {
+            m_TimePaused = Time.timeScale == 0;
+            StartCoroutine(PauseGame(true));
+        } else {
+            StartCoroutine(PauseGame(m_TimePaused));
+        }
 
         if (!Menu.activeInHierarchy) return;
         m_SelectedIndex = 0;

@@ -782,6 +782,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114248278975710794, guid: e186d1cae386cf74fb8616b05a333159,
+        type: 2}
+      propertyPath: ToRemoveOnLoad.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4703912394848314, guid: e186d1cae386cf74fb8616b05a333159, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -829,6 +834,11 @@ Prefab:
       propertyPath: CameraSpawnPosition
       value: 
       objectReference: {fileID: 329128107}
+    - target: {fileID: 114248278975710794, guid: e186d1cae386cf74fb8616b05a333159,
+        type: 2}
+      propertyPath: ToRemoveOnLoad.Array.data[0]
+      value: 
+      objectReference: {fileID: 547426441}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e186d1cae386cf74fb8616b05a333159, type: 2}
   m_IsPrefabParent: 0
@@ -1947,6 +1957,11 @@ Prefab:
       propertyPath: m_Choices.Array.data[0]
       value: 
       objectReference: {fileID: 1570639467}
+    - target: {fileID: 137817826689670108, guid: 06e9ffc6541920146b404316fe817c91,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 87813a2020e687e47b062379023a90fa, type: 3}
     m_RemovedComponents:
     - {fileID: 114196349402547954, guid: 06e9ffc6541920146b404316fe817c91, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 06e9ffc6541920146b404316fe817c91, type: 2}

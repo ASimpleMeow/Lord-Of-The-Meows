@@ -5,8 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Character))]
 public class CharacterInventoryModel : MonoBehaviour {
 
-    //private Dictionary<ItemType, int> Items;
-
     private Character m_Character;
 
     private void Awake() {
@@ -19,9 +17,9 @@ public class CharacterInventoryModel : MonoBehaviour {
 
     public int GetItemCount(ItemType itemType) {
 
-        if (!m_Character.Data.Inventory.Items.ContainsKey(itemType)) return 0;
+        if (!m_Character.Data.Inventory.Contains(itemType)) return 0;
 
-        return m_Character.Data.Inventory.Items[itemType];
+        return m_Character.Data.Inventory.ItemAmount(itemType);
     }
 
     public void AddItem(ItemType itemType) {
@@ -32,12 +30,8 @@ public class CharacterInventoryModel : MonoBehaviour {
 
         if (m_Character.Movement.IsFrozen) return;
 
-        if (m_Character.Data.Inventory.Items.ContainsKey(itemType)) m_Character.Data.Inventory.Items[itemType] += amount;
-        else m_Character.Data.Inventory.Items.Add(itemType, amount);
-
-        if (m_Character.InventoryView == null) return;
-        
-        m_Character.InventoryView.AddItem(itemType, amount);
+        if (m_Character.Data.Inventory.Contains(itemType)) m_Character.Data.Inventory.AddAmount(itemType, amount);
+        else m_Character.Data.Inventory.Add(itemType, amount);
     }
 
     public void RemoveItem(ItemType itemType) {
@@ -46,14 +40,10 @@ public class CharacterInventoryModel : MonoBehaviour {
 
     public void RemoveItem(ItemType itemType, int amount) {
 
-        if (!m_Character.Data.Inventory.Items.ContainsKey(itemType) || m_Character.Movement.IsFrozen) return;
+        if (!m_Character.Data.Inventory.Contains(itemType) || m_Character.Movement.IsFrozen) return;
 
-        if (m_Character.Data.Inventory.Items[itemType] > amount) m_Character.Data.Inventory.Items[itemType] -= amount;
-        else m_Character.Data.Inventory.Items.Remove(itemType);
-
-        if (m_Character.InventoryView == null) return;
-       
-        m_Character.InventoryView.RemoveItem(itemType, amount);
+        if (m_Character.Data.Inventory.ItemAmount(itemType) > amount) m_Character.Data.Inventory.AddAmount(itemType, -amount);
+        else m_Character.Data.Inventory.Remove(itemType);
     }
 
     public void Use() {
@@ -68,13 +58,13 @@ public class CharacterInventoryModel : MonoBehaviour {
                 break;
             case ItemType.HEALTH:
                 Debug.Log("Used Health");
-                RemoveItem(ItemType.HEALTH, 1);
+                if (m_Character.Health == null) return;
+                if(m_Character.Health.AddHealth(1)) RemoveItem(ItemType.HEALTH, 1);
                 break;
             case ItemType.COIN:
                 Debug.Log("Used Coin");
                 if (m_Character.Interaction == null) return;
                 m_Character.Interaction.OnExchange(ItemType.COIN);
-                //RemoveItem(ItemType.COIN, 1);
                 break;
         }
     }
