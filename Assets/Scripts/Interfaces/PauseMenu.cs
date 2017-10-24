@@ -57,7 +57,6 @@ public class PauseMenu : MonoBehaviour {
 
     public void OnMenuButton() {
         Menu.SetActive(!Menu.activeInHierarchy);
-        Character.Movement.IsFrozen = Menu.activeInHierarchy;
         Character.GetComponent<CharacterKeyboardControl>().enabled = !Menu.activeInHierarchy;
         StartCoroutine(PauseGame(Menu.activeInHierarchy));
 

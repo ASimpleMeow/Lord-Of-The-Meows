@@ -123,3 +123,10 @@ Further reading :
 - Begin placing NPC's and creating dialog for them and other interactions
 - Implement ChoiceRemoveObject to allow for Choices to remove a GameObject (PlotBarrier) and allow for story progression
 - Implement SceneChanger to change scenes on Trigger
+	
+  
+&nbsp;
+24-10-2017
+- Create a Scarf for the Character
+- Implement Cloth physics for the Scarf on Character
+- Implement InteractableSignRemove to remove an object after interaction

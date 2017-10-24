@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ChoiceRemoveObject : ChoiceDialog {
 
+    // Inspector fields
     [SerializeField]
-    private GameObject ObjectToRemove;
+    private List<Object> ObjectsToRemove;
 
     public override void OnExecute(Character character) {
         base.OnExecute(character);
-        Destroy(ObjectToRemove);
+        if (ObjectsToRemove == null) return;
+        foreach(Object o in ObjectsToRemove){
+            Destroy(o);
+        }
     }
 }

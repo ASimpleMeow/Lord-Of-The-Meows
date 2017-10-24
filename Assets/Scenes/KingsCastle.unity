@@ -1973,7 +1973,8 @@ MonoBehaviour:
   - "Finally a true hero has appear to sovle my catastrophe!\r"
   - "Our throne has been cat-napped!\r"
   - You must go on a quest to return it to me.
-  ObjectToRemove: {fileID: 547426441}
+  ObjectsToRemove:
+  - {fileID: 547426441}
 --- !u!1 &1593440662
 GameObject:
   m_ObjectHideFlags: 0

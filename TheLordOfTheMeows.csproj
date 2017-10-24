@@ -106,7 +106,9 @@
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableChest.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableExchange.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableSign.cs" />
+    <Compile Include="Assets\Scripts\Objects\Interactable\InteractableSignAdd.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableSignChoice.cs" />
+    <Compile Include="Assets\Scripts\Objects\Interactable\InteractableSignRemove.cs" />
     <Compile Include="Assets\Scripts\Objects\ItemSlot.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Character\CharacterData.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Databases\Database.cs" />

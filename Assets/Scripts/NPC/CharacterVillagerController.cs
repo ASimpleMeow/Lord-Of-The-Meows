@@ -7,9 +7,13 @@ public class CharacterVillagerController : CharacterBaseControl {
     [SerializeField]
     private Transform CenterLeashLocation;
     [SerializeField]
-    private float MaxDistanceFromCenter;
+    private float MaxDistanceFromCenter = 35f;
     [SerializeField]
-    private float ChangeDirectionTimer;
+    private float ChangeDirectionTimer = 7f;
+    [SerializeField]
+    private float PauseTimer = 7f;
+    [SerializeField]
+    private bool UseRandomTimer = true;
 
     private Vector3 m_Direction;
 
@@ -26,9 +30,9 @@ public class CharacterVillagerController : CharacterBaseControl {
     IEnumerator ChangeDirection() {
         while (true) {
             NewHeadingRouting();
-            yield return new WaitForSeconds(Random.Range(ChangeDirectionTimer/2, ChangeDirectionTimer));
+            yield return new WaitForSeconds(UseRandomTimer ? Random.Range(ChangeDirectionTimer/2, ChangeDirectionTimer) : ChangeDirectionTimer);
             m_Direction = new Vector3(0, 0, 0);
-            yield return new WaitForSeconds(Random.Range(0, ChangeDirectionTimer));
+            yield return new WaitForSeconds(UseRandomTimer ? Random.Range(0, PauseTimer) : PauseTimer);
         }
     }
 
