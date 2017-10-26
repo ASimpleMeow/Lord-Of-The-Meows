@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: CharacterDataAsset
   m_EditorClassIdentifier: 
   m_Inventory:
-    m_ItemTypes: 6400000032000000
-    m_ItemAmount: 3200000002000000
-  m_Health: 6
-  m_Level: 0
+    m_ItemTypes: 
+    m_ItemAmount: 
+  m_Health: 3
+  m_Level: 1
   m_Position: {x: 0, y: 0, z: 0}

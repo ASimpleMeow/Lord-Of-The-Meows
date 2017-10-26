@@ -598,6 +598,11 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 65ec739563ad6d040a6c5c387b1f4290,
         type: 2}
+    - target: {fileID: 114699386832567770, guid: 92a148fca1eb9cc44b53b17a00bb8764,
+        type: 2}
+      propertyPath: StartSceneIndex
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114648501742238218, guid: 92a148fca1eb9cc44b53b17a00bb8764, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 92a148fca1eb9cc44b53b17a00bb8764, type: 2}

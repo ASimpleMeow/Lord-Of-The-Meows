@@ -132,3 +132,12 @@ Further reading :
 - Implement InteractableSignRemove to remove an object after interaction
 - Implement game retaining data even after exiting
 - Remake the inventory for easier serialization (using two Lists instead of a Dictionary)
+	
+  
+&nbsp;
+26-10-2017
+- Create the CastleGate model for Village level
+- Set up movement between KingsCastle level and Village level
+- Create TopHat, StrawHat and Helmet models for NPCs
+- Create Spear model for NPC_Guards
+- Position Guards around
