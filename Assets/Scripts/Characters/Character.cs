@@ -15,14 +15,13 @@ public class Character : MonoBehaviour {
     public CharacterData Data;
 
     public void Awake() {
-        if(Data != null) {
-            string path = Application.dataPath + "/Resources/Data/Character/"+ DefaultDataName;
-            if (File.Exists(path)) {
-                string dataAsJson = File.ReadAllText(path);
-                JsonUtility.FromJsonOverwrite(dataAsJson, Data);
-            }else {
-                Debug.Log(path);
-            }
+        if (Data == null) return;
+        string path = Application.dataPath + "/Resources/Data/Character/" + DefaultDataName;
+        if (File.Exists(path)) {
+            string dataAsJson = File.ReadAllText(path);
+            JsonUtility.FromJsonOverwrite(dataAsJson, Data);
+        } else {
+            Debug.LogWarning(path);
         }
     }
 }

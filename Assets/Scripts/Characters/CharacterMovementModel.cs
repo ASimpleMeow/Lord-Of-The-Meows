@@ -71,6 +71,10 @@ public class CharacterMovementModel : MonoBehaviour {
     }
 
 
+    public void Push(Vector3 direction, float magnitude) {
+        m_Body.AddForce(direction*magnitude);
+    }
+
 
     //---------GETTERS/SETTERS------------//
 

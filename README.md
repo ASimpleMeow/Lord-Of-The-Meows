@@ -141,3 +141,8 @@ Further reading :
 - Create TopHat, StrawHat and Helmet models for NPCs
 - Create Spear model for NPC_Guards
 - Position Guards around
+	
+  
+&nbsp;
+27-10-2017
+- Create SimpleAI, where if the player gets in range, the AI will come over and push the Player (as well as deal damage)

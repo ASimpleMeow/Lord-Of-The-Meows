@@ -87,6 +87,9 @@
     <Compile Include="Assets\Scripts\Characters\CharacterKeyboardControl.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterMovementModel.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterMovementView.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyCharacterCollision.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyProximitySensor.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemySimpleAIController.cs" />
     <Compile Include="Assets\Scripts\Interfaces\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ChoiceBox.cs" />
     <Compile Include="Assets\Scripts\Interfaces\DialogBox.cs" />
@@ -97,6 +100,8 @@
     <Compile Include="Assets\Scripts\Misc\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\Misc\SceneController.cs" />
     <Compile Include="Assets\Scripts\NPC\CharacterVillagerController.cs" />
+    <Compile Include="Assets\Scripts\Objects\Attackable\AttackableBase.cs" />
+    <Compile Include="Assets\Scripts\Objects\Attackable\AttackableEnemy.cs" />
     <Compile Include="Assets\Scripts\Objects\CharacterSpawn.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\Choices\ChoiceBase.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\Choices\ChoiceDialog.cs" />
