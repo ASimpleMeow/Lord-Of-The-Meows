@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Character))]
 public class CharacterInventoryModel : MonoBehaviour {
 
+    public Animator anim;
+
     private Character m_Character;
 
     private void Awake() {
@@ -55,6 +57,9 @@ public class CharacterInventoryModel : MonoBehaviour {
         switch (selectedItem) {
             case ItemType.WEAPON:
                 Debug.Log("Used Weapon");
+                if (m_Character.Movement == null) return;
+                if (!m_Character.Movement.CanAttack) return;
+                m_Character.Movement.DoAttack();
                 break;
             case ItemType.HEALTH:
                 Debug.Log("Used Health");

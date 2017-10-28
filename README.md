@@ -146,3 +146,10 @@ Further reading :
 &nbsp;
 27-10-2017
 - Create SimpleAI, where if the player gets in range, the AI will come over and push the Player (as well as deal damage)
+	
+  
+&nbsp;
+28-10-2017
+- Create Attack_1 Animation for the Character
+- Set up AnimatorController to include Attacking
+- Allow for Attacks (if a weapon is present and selected in the inventory) with the SPACEBAR Key

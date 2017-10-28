@@ -19,6 +19,8 @@ public class CharacterMovementModel : MonoBehaviour {
     private Quaternion m_TargetRotation;
     private bool m_IsRunning;
     private bool m_IsFrozen;
+    private bool m_CanAttack;
+    private bool m_IsAttacking;
 
     // Components
     private Rigidbody m_Body;
@@ -31,6 +33,7 @@ public class CharacterMovementModel : MonoBehaviour {
     private void Start () {
         SetDirection(new Vector3(0, 0,-1));
         IsRunning = false;
+        m_CanAttack = true;
     }
 	
 	private void FixedUpdate () {
@@ -39,7 +42,7 @@ public class CharacterMovementModel : MonoBehaviour {
 
     private void UpdateMovement() {
 
-        if (IsFrozen) {
+        if (IsFrozen || IsAttacking) {
             m_Body.velocity = Vector3.zero;
             return;
         }
@@ -55,7 +58,7 @@ public class CharacterMovementModel : MonoBehaviour {
 
     public void SetDirection(Vector3 direction) {
 
-        if (IsFrozen) return;
+        if (IsFrozen || IsAttacking) return;
 
         m_MovementDirection = direction;
 
@@ -70,6 +73,21 @@ public class CharacterMovementModel : MonoBehaviour {
 
     }
 
+    public void DoAttack() {
+        StartCoroutine(Attack());
+    }
+
+    IEnumerator Attack() {
+        CanAttack = false;
+        IsAttacking = true;
+
+        yield return null;
+        IsAttacking = false;
+
+        yield return new WaitForSeconds(0.05f);
+        CanAttack = true;
+    }
+
 
     public void Push(Vector3 direction, float magnitude) {
         m_Body.AddForce(direction*magnitude);
@@ -82,12 +100,22 @@ public class CharacterMovementModel : MonoBehaviour {
 
     public bool IsFrozen { get; set; }
 
+    public bool IsAttacking { get { return m_IsAttacking; } set { m_IsAttacking = value; } }
+
     public float Velocity {
         get { return m_Body.velocity.magnitude; }
     }
 
     public float MaxVelocity {
         get { return RunSpeed; }
+    }
+
+    public bool CanAttack {
+        get {
+            if (IsFrozen || IsAttacking) return false;
+            return m_CanAttack;
+        }
+        set { m_CanAttack = value; }
     }
 
 }

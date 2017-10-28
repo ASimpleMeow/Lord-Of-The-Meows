@@ -22,8 +22,14 @@ public class CharacterMovementView : MonoBehaviour {
     }
 
 	private void Update () {
+        UpdateAttack();
         UpdateMovement();
 	}
+
+    private void UpdateAttack() {
+        if (m_Character.Movement == null) return;
+        Animator.SetBool("Attack", m_Character.Movement.IsAttacking);
+    }
 
     private void UpdateMovement() {
         if (m_Character.Movement == null) return;
