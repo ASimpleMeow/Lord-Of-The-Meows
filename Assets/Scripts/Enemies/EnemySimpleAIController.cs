@@ -7,6 +7,8 @@ public class EnemySimpleAIController : CharacterBaseControl {
     [SerializeField]
     private int AttackDamage;
     [SerializeField]
+    private float CharacterPushBack = 5.5f;
+    [SerializeField]
     private AttackableEnemy m_AttackableEnemy;
     private GameObject m_CharacterInRange;
 
@@ -45,7 +47,7 @@ public class EnemySimpleAIController : CharacterBaseControl {
         if (character == null) return;
 
         character.Health.DealDamage(AttackDamage);
-        character.Movement.Push(direction, 5500);
+        character.Movement.Push(direction, CharacterPushBack*1000);
         Debug.Log(character.Data.Health);
     }
 }

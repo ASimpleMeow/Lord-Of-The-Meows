@@ -115,6 +115,7 @@
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableSignChoice.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableSignRemove.cs" />
     <Compile Include="Assets\Scripts\Objects\ItemSlot.cs" />
+    <Compile Include="Assets\Scripts\Objects\Weapon\WeaponCollider.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Character\CharacterData.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Databases\Database.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Databases\ItemDatabase.cs" />

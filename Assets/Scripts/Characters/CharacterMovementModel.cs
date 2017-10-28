@@ -12,6 +12,8 @@ public class CharacterMovementModel : MonoBehaviour {
     private float RunSpeed;
     [SerializeField]
     private float RotationSpeed;
+    [SerializeField]
+    private GameObject Weapon;
 
     // Private variables
     private Vector3 m_MovementDirection;
@@ -28,6 +30,7 @@ public class CharacterMovementModel : MonoBehaviour {
 
     private void Awake() {
         m_Body = GetComponent<Rigidbody>();
+        if (Weapon != null) Weapon.SetActive(false);
     }
 
     private void Start () {
@@ -80,12 +83,16 @@ public class CharacterMovementModel : MonoBehaviour {
     IEnumerator Attack() {
         CanAttack = false;
         IsAttacking = true;
+        IsFrozen = true;
 
         yield return null;
+        if (Weapon != null) Weapon.SetActive(true);
         IsAttacking = false;
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.4f);
+        if (Weapon != null) Weapon.SetActive(false);
         CanAttack = true;
+        IsFrozen = false;
     }
 
 

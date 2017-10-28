@@ -819,41 +819,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4719799263444880, guid: b60d782bf1c3dac4bacfcf9ea481b4b0, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 4719799263444880, guid: b60d782bf1c3dac4bacfcf9ea481b4b0, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.33333328
-      objectReference: {fileID: 0}
-    - target: {fileID: 4719799263444880, guid: b60d782bf1c3dac4bacfcf9ea481b4b0, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.33333328
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b60d782bf1c3dac4bacfcf9ea481b4b0, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &134544136 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1204579099671322, guid: b60d782bf1c3dac4bacfcf9ea481b4b0,
-    type: 2}
-  m_PrefabInternal: {fileID: 134544135}
---- !u!114 &134544137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 134544136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3175eeb8128830e4b9503b4db3ecc1ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Messages:
-  - 'Get Claw-st!
-
-    Don''t interfere with my guard duty'
 --- !u!4 &142249789 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4389171190738088, guid: f7f239e0ab449934c915ad3468c5cf87,
@@ -1353,8 +1321,7 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1324133958}
     m_Modifications:
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1411,13 +1378,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[0]
       value: Being a kid sure is fun, I can scratch people and won't get into trouble!
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[1]
       value: '*Hssss*'
       objectReference: {fileID: 0}
@@ -4573,8 +4538,7 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1324133958}
     m_Modifications:
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -4619,13 +4583,11 @@ Prefab:
       propertyPath: m_Name
       value: Father
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[0]
       value: I think one of my kids is Claw-st
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[1]
       value: Oh well, not my problem.
       objectReference: {fileID: 0}
@@ -4642,12 +4604,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4157694809927210, guid: ffca2ae6ba1786c4d955843dceebff5d,
     type: 2}
   m_PrefabInternal: {fileID: 596331087}
---- !u!114 &596331089 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-    type: 2}
-  m_PrefabInternal: {fileID: 596331087}
-  m_Script: {fileID: 11500000, guid: 3175eeb8128830e4b9503b4db3ecc1ed, type: 3}
 --- !u!1 &596331090 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1791851653229392, guid: ffca2ae6ba1786c4d955843dceebff5d,
@@ -5016,6 +4972,7 @@ GameObject:
   - component: {fileID: 617130638}
   - component: {fileID: 617130639}
   - component: {fileID: 617130640}
+  - component: {fileID: 617130646}
   - component: {fileID: 617130636}
   m_Layer: 0
   m_Name: Enemy
@@ -5050,9 +5007,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d890066fc3c01aa45b377194d5443349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkSpeed: 5
+  WalkSpeed: 4
   RunSpeed: 0
   RotationSpeed: 0
+  Weapon: {fileID: 0}
 --- !u!114 &617130637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5084,7 +5042,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackDamage: 1
-  m_AttackableEnemy: {fileID: 0}
+  CharacterPushBack: 5.5
+  m_AttackableEnemy: {fileID: 617130646}
 --- !u!114 &617130639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5177,13 +5136,26 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 617130634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.6992188, y: 7.0859375, z: -3.71}
+  m_LocalPosition: {x: -3.6992188, y: 7.0859375, z: -14.058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1456995315}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &617130646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617130634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1686b90e448ad094c81e8d269b58ef5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  PushBackMagnitude: 5.5
 --- !u!1001 &630868028
 Prefab:
   m_ObjectHideFlags: 0
@@ -5886,8 +5858,7 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1324133958}
     m_Modifications:
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -5932,13 +5903,11 @@ Prefab:
       propertyPath: m_Name
       value: NPC (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[0]
       value: I Fur-get the keys to the house...
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[1]
       value: Oh well, it's a great weather outside.
       objectReference: {fileID: 0}
@@ -6129,8 +6098,7 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1324133958}
     m_Modifications:
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -6175,8 +6143,7 @@ Prefab:
       propertyPath: m_Name
       value: NPC (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[0]
       value: 'Paw-don me, but would '
       objectReference: {fileID: 0}
@@ -6186,7 +6153,7 @@ Prefab:
       value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d, type: 2}
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: ffca2ae6ba1786c4d955843dceebff5d, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &745023155 stripped
@@ -9031,8 +8998,7 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1324133958}
     m_Modifications:
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -9089,28 +9055,23 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[0]
       value: I'm always bullied for my large size...
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[1]
       value: Please don't bully me.
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[2]
       value: '... Meow'
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[3]
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[4]
       value: '... Meow'
       objectReference: {fileID: 0}
@@ -12186,8 +12147,7 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1324133958}
     m_Modifications:
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -12232,19 +12192,16 @@ Prefab:
       propertyPath: m_Name
       value: NPC (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[0]
       value: Meow wife kicked me out of the house! Oh how A-paw-ling!
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[1]
       value: She doesn't care how I'm Feline at all! All because I accidentally Fur-got
         where I hid the money
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[2]
       value: I think it was somewhere in the woods right next to one of the houses
       objectReference: {fileID: 0}
@@ -12639,11 +12596,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1324133958}
     m_Modifications:
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
-      propertyPath: Messages.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4157694809927210, guid: ffca2ae6ba1786c4d955843dceebff5d, type: 2}
       propertyPath: m_LocalPosition.x
       value: -28.4
@@ -12681,96 +12633,9 @@ Prefab:
       propertyPath: CenterLeashLocation
       value: 
       objectReference: {fileID: 50310985}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
-      propertyPath: Messages.Array.data[0]
-      value: Fur real? You're asking why everyone here looks so similar?
-      objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
-      propertyPath: Messages.Array.data[1]
-      value: Well let me tell you a Tail
-      objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
-      propertyPath: Messages.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
-      propertyPath: Messages.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
-      propertyPath: Messages.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114844105376859394, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
-      propertyPath: MaxDistanceFromCenter
-      value: 40
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffca2ae6ba1786c4d955843dceebff5d, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1514880404 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1791851653229392, guid: ffca2ae6ba1786c4d955843dceebff5d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1514880403}
---- !u!114 &1514880405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1514880404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 412a09edc89b5c349b6a327848e9d4e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ChoiceName: No
-  ChoiceFlags: 4
---- !u!114 &1514880406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1514880404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6a544eb9d2445488aeb7a379cb23e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ChoiceName: Yes
-  ChoiceFlags: 4
-  Messages:
-  - Well then, let me tell you a Tail. In the ages of Hiss-tory, there were many different
-    kinds of us.
-  - However a great Cat-astrophe occured and cause the Disa-purr-ance of all other
-    kinds.
-  - There are Paw-sibly a few rare survivers somewhere, but I haven't heard of them
-    in years.
-  - Well that's all I know about this.
---- !u!114 &1514880407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1514880404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74eb9f2b5ee1f8b48a408c6a6752203e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Messages:
-  - Fur Real!? You're asking why eveyone here looks so similar?
-  m_Choices:
-  - {fileID: 1514880406}
-  - {fileID: 1514880405}
-  m_RemoveChoices: 0
 --- !u!1 &1515308443
 GameObject:
   m_ObjectHideFlags: 0
@@ -15336,7 +15201,7 @@ MonoBehaviour:
   - I'm not lost or anything!
   - My dad has been neglecting me, so tell him I won't come back until he says sorry!
   ToRemove:
-  - {fileID: 596331089}
+  - {fileID: 0}
 --- !u!114 &1857047492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15412,6 +15277,7 @@ MonoBehaviour:
   WalkSpeed: 6
   RunSpeed: 6
   RotationSpeed: 500
+  Weapon: {fileID: 0}
 --- !u!114 &1857047497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15426,6 +15292,7 @@ MonoBehaviour:
   WalkSpeed: 0
   RunSpeed: 0
   RotationSpeed: 0
+  Weapon: {fileID: 0}
 --- !u!114 &1857047498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17315,8 +17182,7 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1324133958}
     m_Modifications:
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -17373,13 +17239,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[0]
       value: Hey I'm not a kid! I just didn't drink my milk and remained small
       objectReference: {fileID: 0}
-    - target: {fileID: 114595218760542680, guid: ffca2ae6ba1786c4d955843dceebff5d,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Messages.Array.data[1]
       value: It's making me Fur-ious that you still look down on me!
       objectReference: {fileID: 0}

@@ -153,3 +153,5 @@ Further reading :
 - Create Attack_1 Animation for the Character
 - Set up AnimatorController to include Attacking
 - Allow for Attacks (if a weapon is present and selected in the inventory) with the SPACEBAR Key
+- Create a sword model for the Character
+- Implement basic combat, with damage and push back. The enemy gets destoryed when they run out of health

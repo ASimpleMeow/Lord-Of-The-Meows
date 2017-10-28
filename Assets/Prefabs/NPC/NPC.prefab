@@ -447,7 +447,9 @@ GameObject:
   - component: {fileID: 114897955843973402}
   - component: {fileID: 54816845979007128}
   - component: {fileID: 136500429400050134}
-  - component: {fileID: 114595218760542680}
+  - component: {fileID: 114183712343437818}
+  - component: {fileID: 114951564805772412}
+  - component: {fileID: 114751444404841772}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -773,7 +775,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1791851653229392}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.7, y: 0, z: -3.3197021}
+  m_LocalPosition: {x: -28.4, y: 0, z: -4.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4930207135226522}
@@ -1348,7 +1350,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1909961391815648}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 87813a2020e687e47b062379023a90fa, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 53694888c6f27fa45869e17eb9d18d8e, type: 3}
   m_Controller: {fileID: 9100000, guid: adb2a3f8cea329b44b6f98d63b3ab434, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -1357,7 +1359,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114595218760542680
+--- !u!114 &114183712343437818
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1365,11 +1367,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1791851653229392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3175eeb8128830e4b9503b4db3ecc1ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 412a09edc89b5c349b6a327848e9d4e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Messages:
-  - It's a Purr-fect day today
+  ChoiceName: No
+  ChoiceFlags: 4
 --- !u!114 &114687839426513708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1384,6 +1386,24 @@ MonoBehaviour:
   WalkSpeed: 3
   RunSpeed: 6
   RotationSpeed: 500
+  Weapon: {fileID: 0}
+--- !u!114 &114751444404841772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1791851653229392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74eb9f2b5ee1f8b48a408c6a6752203e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Messages:
+  - Fur Real!? You're asking why eveyone here looks so similar?
+  m_Choices:
+  - {fileID: 114951564805772412}
+  - {fileID: 114183712343437818}
+  m_RemoveChoices: 0
 --- !u!114 &114844105376859394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1396,8 +1416,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CenterLeashLocation: {fileID: 0}
-  MaxDistanceFromCenter: 35
+  MaxDistanceFromCenter: 40
   ChangeDirectionTimer: 7
+  PauseTimer: 7
+  UseRandomTimer: 1
 --- !u!114 &114853027243664976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1409,11 +1431,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e29569fee0ff6498a5e7a8122e4a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultDataName: CharacterDataDefault.json
   Movement: {fileID: 114687839426513708}
   Interaction: {fileID: 0}
   MovementView: {fileID: 114897955843973402}
   Inventory: {fileID: 0}
   InventoryView: {fileID: 0}
+  Health: {fileID: 0}
   Data: {fileID: 0}
 --- !u!114 &114897955843973402
 MonoBehaviour:
@@ -1439,6 +1463,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5a7b150929a624b996a5fe1b09c699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114951564805772412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1791851653229392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6a544eb9d2445488aeb7a379cb23e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChoiceName: Yes
+  ChoiceFlags: 4
+  Messages:
+  - Well then, let me tell you a Tail. In the ages of Hiss-tory, there were many different
+    kinds of us.
+  - However a great Cat-astrophe occured and cause the Disa-purr-ance of all other
+    kinds.
+  - There are Paw-sibly a few rare survivers somewhere, but I haven't heard of them
+    in years.
+  - Well that's all I know about this.
 --- !u!136 &136500429400050134
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1488,7 +1533,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 87813a2020e687e47b062379023a90fa, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 53694888c6f27fa45869e17eb9d18d8e, type: 3}
   m_Bones:
   - {fileID: 4767457602540906}
   - {fileID: 4948816201516626}
