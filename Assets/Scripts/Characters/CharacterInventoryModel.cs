@@ -56,7 +56,7 @@ public class CharacterInventoryModel : MonoBehaviour {
 
         switch (selectedItem) {
             case ItemType.WEAPON:
-                Debug.Log("Used Weapon");
+                //Debug.Log("Used Weapon");
                 if (m_Character.Movement == null) return;
                 if (!m_Character.Movement.CanAttack) return;
                 m_Character.Movement.DoAttack();

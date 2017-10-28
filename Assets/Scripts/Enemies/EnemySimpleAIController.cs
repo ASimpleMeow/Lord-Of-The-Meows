@@ -43,7 +43,7 @@ public class EnemySimpleAIController : CharacterBaseControl {
 
         m_CharacterInRange = null;
 
-        Debug.Log("Damage Dealth :" + AttackDamage);
+        //Debug.Log("Damage Dealth :" + AttackDamage);
         if (character == null) return;
 
         character.Health.DealDamage(AttackDamage);

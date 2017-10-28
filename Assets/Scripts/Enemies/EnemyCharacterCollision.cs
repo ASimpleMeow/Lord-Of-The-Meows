@@ -5,16 +5,20 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class EnemyCharacterCollision : MonoBehaviour {
 
-    private EnemySimpleAIController m_Controller;
+    [SerializeField]
+    private EnemySimpleAIController Controller;
 
     private void Awake() {
-        m_Controller = GetComponent<EnemySimpleAIController>();
+        if (Controller == null) {
+            Debug.LogWarning("EnemyControllerNotAttached Not Attached!", gameObject);
+            enabled = false;
+        }
         GetComponent<Collider>().isTrigger = false;
     }
 
     void OnCollisionEnter(Collision collision) {
         if (collision.collider.tag == "Player") {
-            m_Controller.OnHitCharacter(collision.collider.gameObject.GetComponent<Character>());
+            Controller.OnHitCharacter(collision.collider.gameObject.GetComponent<Character>());
         }
     }
 }

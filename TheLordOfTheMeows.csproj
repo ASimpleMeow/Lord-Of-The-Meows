@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\Enemies\EnemySimpleAIController.cs" />
     <Compile Include="Assets\Scripts\Interfaces\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ChoiceBox.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\DamageNumbers.cs" />
     <Compile Include="Assets\Scripts\Interfaces\DialogBox.cs" />
     <Compile Include="Assets\Scripts\Interfaces\FadeScreen.cs" />
     <Compile Include="Assets\Scripts\Interfaces\HealthUI.cs" />
