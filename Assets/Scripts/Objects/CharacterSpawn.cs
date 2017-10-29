@@ -34,10 +34,18 @@ public class CharacterSpawn : MonoBehaviour {
         }
         if (m_Camera != null) {
             m_Camera.GetComponent<CameraMovement>().enabled = CameraMovement;
-            if(CameraPosition != new Vector3(0,0,0)) m_Camera.transform.position = CameraPosition;
-            if (CameraOffsetX != 0) m_Camera.GetComponent<CameraMovement>().OffsetX = CameraOffsetX;
-            if (CameraOffsetZ != 0) m_Camera.GetComponent<CameraMovement>().OffsetZ = CameraOffsetZ;
-            if (CameraRotation != new Vector3(0, 0, 0)) m_Camera.transform.eulerAngles = CameraRotation;
+            if (CameraPosition != new Vector3(0, 0, 0)) {
+                m_Camera.transform.position = CameraPosition;
+            }if (CameraOffsetX != 0) {
+                m_Camera.GetComponent<CameraMovement>().Data.OffsetX = CameraOffsetX;
+                m_Camera.GetComponent<CameraMovement>().OffsetX = CameraOffsetX;
+            }if (CameraOffsetZ != 0) {
+                m_Camera.GetComponent<CameraMovement>().Data.OffsetZ = CameraOffsetZ;
+                m_Camera.GetComponent<CameraMovement>().OffsetZ = CameraOffsetZ;
+            }if (CameraRotation != new Vector3(0, 0, 0)) {
+                m_Camera.GetComponent<CameraMovement>().Data.NewRotation = CameraRotation;
+                m_Camera.transform.eulerAngles = CameraRotation;
+            }
         }
 
         if (ToRemoveOnLoad == null) return;

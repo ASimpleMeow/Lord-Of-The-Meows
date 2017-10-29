@@ -13,6 +13,8 @@ public class PauseMenu : MonoBehaviour {
     [SerializeField]
     private CharacterData CharacterData;
     [SerializeField]
+    private CameraData CameraData;
+    [SerializeField]
     private List<LevelData> LevelDatas;
 
     private int m_SelectedIndex;
@@ -77,8 +79,25 @@ public class PauseMenu : MonoBehaviour {
     }
 
     public void OnLoad() {
+
+        string path = Application.dataPath + "/Resources/Data/Character/SaveFile.json";
+        if (File.Exists(path)) {
+            string dataAsJson = File.ReadAllText(path);
+            JsonUtility.FromJsonOverwrite(dataAsJson, CharacterData);
+        } else {
+            Debug.LogWarning(path);
+        }
+
+        path = Application.dataPath + "/Resources/Data/Camera/SaveFile.json";
+        if (File.Exists(path)) {
+            string dataAsJson = File.ReadAllText(path);
+            JsonUtility.FromJsonOverwrite(dataAsJson, CameraData);
+        } else {
+            Debug.LogWarning(path);
+        }
+
         foreach (LevelData data in LevelDatas) {
-            string path = Application.dataPath + "/Resources/Data/" + data.LevelName + "/SaveFile.json";
+            path = Application.dataPath + "/Resources/Data/" + data.LevelName + "/SaveFile.json";
             if (File.Exists(path)) {
                 string dataAsJson = File.ReadAllText(path);
                 JsonUtility.FromJsonOverwrite(dataAsJson, data);
@@ -86,6 +105,10 @@ public class PauseMenu : MonoBehaviour {
                 Debug.LogWarning(path);
             }
         }
+
+        OnMenuButton();
+        SceneController.Instance.ChangeScene(SceneController.Instance.CurrentScene, CharacterData.Level);
+
     }
 
     public void OnExit() {
@@ -94,6 +117,10 @@ public class PauseMenu : MonoBehaviour {
         CharacterData.Level = SceneController.Instance.CurrentScene;
         string path = Application.dataPath + "/Resources/Data/Character/SaveFile.json";
         string saveData = JsonUtility.ToJson(CharacterData);
+        File.WriteAllText(path, saveData);
+
+        path = Application.dataPath + "/Resources/Data/Camera/SaveFile.json";
+        saveData = JsonUtility.ToJson(CameraData);
         File.WriteAllText(path, saveData);
 
         foreach (LevelData data in LevelDatas) {

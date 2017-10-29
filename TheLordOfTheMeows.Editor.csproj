@@ -129,6 +129,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Editor\CameraDataCreator.cs" />
     <Compile Include="Assets\Scripts\Editor\CharacterDataCreator.cs" />
     <Compile Include="Assets\Scripts\Editor\EnumFlagsAttributeDrawer.cs" />
     <Compile Include="Assets\Scripts\Editor\ItemDatabaseCreator.cs" />

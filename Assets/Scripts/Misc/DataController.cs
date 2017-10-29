@@ -18,16 +18,13 @@ public class DataController : MonoBehaviour {
             Debug.LogWarning("NO DATA ATTACHED!");
             enabled = false;
         }
-    }
 
-    private void Start() {
-        if (Data == null) return;
         string path = Application.dataPath + "/Resources/Data/" + Data.LevelName + "/SaveFile.json";
         if (File.Exists(path)) {
             string dataAsJson = File.ReadAllText(path);
             JsonUtility.FromJsonOverwrite(dataAsJson, Data);
         } else {
-            path = Application.dataPath + "/Resources/Data/" + Data.LevelName + "/"+ DefaultDataName;
+            path = Application.dataPath + "/Resources/Data/" + Data.LevelName + "/" + DefaultDataName;
             if (File.Exists(path)) {
                 string dataAsJson = File.ReadAllText(path);
                 JsonUtility.FromJsonOverwrite(dataAsJson, Data);
@@ -36,26 +33,6 @@ public class DataController : MonoBehaviour {
             }
         }
     }
-
-    /*public void OnLoad() {
-        if (Data == null) return;
-        string path = Application.dataPath + "/Resources/Data/"+Data.LevelName+"/" + DefaultDataName;
-        if (File.Exists(path)) {
-            string dataAsJson = File.ReadAllText(path);
-            JsonUtility.FromJsonOverwrite(dataAsJson, Data);
-        } else {
-            Debug.LogWarning(path);
-        }
-        /*string data = JsonUtility.ToJson(Data);
-        string path = Application.dataPath + "/Resources/Data/"+ Level+"/" + DefaultDataName;
-        File.WriteAllText(path, data);
-        /*if (File.Exists(path)) {
-            string dataAsJson = File.ReadAllText(path);
-            JsonUtility.FromJsonOverwrite(dataAsJson, Data);
-        } else {
-            Debug.LogWarning(path);
-        }
-    }*/
 
     public ObjectData FindThis(string gameObjectName, string script) {
         foreach (ObjectData obj in DataController.Instance.Data.Objects) {
