@@ -16,22 +16,18 @@ public class CameraMovement : MonoBehaviour {
     [SerializeField]
     private Vector3 m_NewPosition;
     [SerializeField]
-    private string DefaultDataName = "CameraDataDefault.json";
+    private string DefaultDataName = "CameraDataDefault";
 
     private void Awake() {
         if (Data == null) return;
-        string path = Application.dataPath + "/Resources/Data/Camera/" + "/SaveFile.json";
+        string path = Application.persistentDataPath+ "/CameraSaveFile.json";
         if (File.Exists(path)) {
             string dataAsJson = File.ReadAllText(path);
             JsonUtility.FromJsonOverwrite(dataAsJson, Data);
         } else {
-            path = Application.dataPath + "/Resources/Data/Camera/" + DefaultDataName;
-            if (File.Exists(path)) {
-                string dataAsJson = File.ReadAllText(path);
-                JsonUtility.FromJsonOverwrite(dataAsJson, Data);
-            } else {
-                Debug.LogWarning(path);
-            }
+            path = "Data/Camera/" + DefaultDataName;
+            TextAsset t = Resources.Load<TextAsset>(path.Replace(".json", ""));
+            JsonUtility.FromJsonOverwrite(t.text, Data);
         }
     }
 

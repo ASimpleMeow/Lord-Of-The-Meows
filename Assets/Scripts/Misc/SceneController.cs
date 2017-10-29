@@ -27,9 +27,10 @@ public class SceneController : MonoBehaviour {
 
     private void Awake() {
         if (m_GameStart) return;
-
         Instance = this;
         m_GameStart = true;
+        CurrentScene = 1;
+        Instance.LoadScene(CurrentScene);
     }
 
     public int LastScene {
@@ -41,6 +42,7 @@ public class SceneController : MonoBehaviour {
     public void ChangeScene(int thisScene, int loadScene) {
         if (thisScene == loadScene) return;
         m_LastScene = thisScene;
+        SaverLoader.SaveLevels();
         UnloadScene(thisScene);
         LoadScene(loadScene);
     }

@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4064779035469720}
   - component: {fileID: 114699386832567770}
+  - component: {fileID: 114592107372118228}
   - component: {fileID: 114686935153861208}
   - component: {fileID: 114630515282059074}
   - component: {fileID: 114028066873695308}
-  - component: {fileID: 114648501742238218}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -56,6 +56,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FadeImage: {fileID: 0}
+--- !u!114 &114592107372118228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1989175431037372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b84b3ee230ce4047a000f5db912a59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterData: {fileID: 0}
+  CameraData: {fileID: 0}
+  LevelsData: []
 --- !u!114 &114630515282059074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,19 +81,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03950b3eb2218614682ea14984b7e06b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114648501742238218
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1989175431037372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5295fbc981ed240bc2f1828fbc588b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Objects: []
-  Path: Assets/Resources/SaveData
 --- !u!114 &114686935153861208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -93,6 +94,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 0}
   Menu: {fileID: 0}
+  CharacterData: {fileID: 11400000, guid: 65ec739563ad6d040a6c5c387b1f4290, type: 2}
+  CameraData: {fileID: 11400000, guid: 647867cbccc0e294d9d912d1e23c7de7, type: 2}
+  LevelDatas:
+  - {fileID: 11400000, guid: ef28025aa54509e40b4edd73e7e0034d, type: 2}
+  - {fileID: 11400000, guid: 803bc88e759f8f741a828fe7cc519532, type: 2}
 --- !u!114 &114699386832567770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,3 +113,4 @@ MonoBehaviour:
   StartSceneIndex: 1
   ScreenFadeSpeed: 10
   ScreenTransistionTime: 1
+  CurrentScene: 0

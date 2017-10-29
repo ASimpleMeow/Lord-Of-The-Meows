@@ -49,7 +49,7 @@ public class InteractableSignChoice : InteractableSign {
         m_IgnoreChoices = (extra & ChoiceOptions.EndInteraction) == ChoiceOptions.EndInteraction;
         m_RemoveChoices = (extra & ChoiceOptions.RemoveChoices) == ChoiceOptions.RemoveChoices;
 
-        m_Data.keyVariable = m_RemoveChoices;
+        if(m_Data != null) m_Data.keyVariable = m_RemoveChoices;
 
         DisplayNextMessage(character);
     }
@@ -62,8 +62,9 @@ public class InteractableSignChoice : InteractableSign {
     protected override void DisplayNextMessage(Character character) {
 
         if (m_MessageQueue.Count == 0) {
-            if (m_IgnoreChoices || m_RemoveChoices || m_Choices.Count == 0) EndInteraction(character);
-            else HandleChoices(character);
+            if (m_IgnoreChoices || m_RemoveChoices || m_Choices.Count == 0) {
+                EndInteraction(character);
+            } else HandleChoices(character);
 
             return;
         }

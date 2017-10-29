@@ -4,7 +4,7 @@ using UnityEngine;
 public class Character : MonoBehaviour {
 
     [SerializeField]
-    private string DefaultDataName = "CharacterDataDefault.json";
+    private string DefaultDataName = "CharacterDataDefault";
 
     public CharacterMovementModel Movement;
     public CharacterInteractionModel Interaction;
@@ -16,27 +16,20 @@ public class Character : MonoBehaviour {
 
     public void Awake() {
         if (Data == null) return;
-        string path = Application.dataPath + "/Resources/Data/Character/" + "/SaveFile.json";
+        string path = Application.persistentDataPath + "/CharacterSaveFile.json";
         if (File.Exists(path)) {
             string dataAsJson = File.ReadAllText(path);
             JsonUtility.FromJsonOverwrite(dataAsJson, Data);
         } else {
-            path = Application.dataPath + "/Resources/Data/Character/" + DefaultDataName;
-            if (File.Exists(path)) {
-                string dataAsJson = File.ReadAllText(path);
-                JsonUtility.FromJsonOverwrite(dataAsJson, Data);
-            } else {
-                Debug.LogWarning(path);
-            }
+            path = "Data/Character/" + DefaultDataName;
+            TextAsset t = Resources.Load<TextAsset>(path.Replace(".json", ""));
+            JsonUtility.FromJsonOverwrite(t.text, Data);
         }
+    }
 
-        SceneController.Instance.LoadScene(Data.Level);
-        /*string path = Application.dataPath + "/Resources/Data/Character/" + DefaultDataName;
-        if (File.Exists(path)) {
-            string dataAsJson = File.ReadAllText(path);
-            JsonUtility.FromJsonOverwrite(dataAsJson, Data);
-        } else {
-            Debug.LogWarning(path);
-        }*/
+    private void Start() {
+        if (Data == null) return;
+        if (SceneController.Instance.CurrentScene == Data.Level) return;
+        SceneController.Instance.ChangeScene(SceneController.Instance.CurrentScene, Data.Level);
     }
 }

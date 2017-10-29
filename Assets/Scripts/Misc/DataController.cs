@@ -10,7 +10,7 @@ public class DataController : MonoBehaviour {
     public LevelData Data;
 
     [SerializeField]
-    private string DefaultDataName = "LevelDataDefault.json";
+    private string DefaultDataName = "LevelDataDefault";
 
     private void Awake() {
         if(Instance == null) Instance = this;
@@ -19,18 +19,14 @@ public class DataController : MonoBehaviour {
             enabled = false;
         }
 
-        string path = Application.dataPath + "/Resources/Data/" + Data.LevelName + "/SaveFile.json";
+        string path = Application.persistentDataPath + "/"+Data.LevelName + "SaveFile.json";
         if (File.Exists(path)) {
             string dataAsJson = File.ReadAllText(path);
             JsonUtility.FromJsonOverwrite(dataAsJson, Data);
         } else {
-            path = Application.dataPath + "/Resources/Data/" + Data.LevelName + "/" + DefaultDataName;
-            if (File.Exists(path)) {
-                string dataAsJson = File.ReadAllText(path);
-                JsonUtility.FromJsonOverwrite(dataAsJson, Data);
-            } else {
-                Debug.LogWarning(path);
-            }
+            path = "Data/" + Data.LevelName + "/" + DefaultDataName;
+            TextAsset t = Resources.Load<TextAsset>(path.Replace(".json",""));
+            JsonUtility.FromJsonOverwrite(t.text, Data);
         }
     }
 

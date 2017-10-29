@@ -52,17 +52,17 @@ public class InteractableSign : InteractableBase {
     
 
     protected void EndInteraction(Character character) {
+        if (m_TypeMessageCoroutine != null) StopCoroutine(m_TypeMessageCoroutine);
+        m_TypeMessageCoroutine = null;
         Time.timeScale = 1;
         character.Movement.IsFrozen = false;
         if (DialogBox.IsVisible()) DialogBox.Hide();
         if (ChoiceBox.IsVisible()) ChoiceBox.Hide();
-        m_TypeMessageCoroutine = null;
     }
 
     protected IEnumerator FreezeTimeRoutine() {
-        yield return null;
-
         Time.timeScale = 0;
+        yield return null;
     }
 
     protected IEnumerator TypeMessage(string message) {
