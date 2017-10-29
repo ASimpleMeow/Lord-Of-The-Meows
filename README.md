@@ -156,3 +156,8 @@ Further reading :
 - Create a sword model for the Character
 - Implement basic combat, with damage and push back. The enemy gets destoryed when they run out of health
 - Display Damage done (to the enemy) via UI -> Numbers of damage appear of the enemy for 0.75 seconds
+	
+  
+&nbsp;
+29-10-2017
+- Implement saving and loading leveldata

@@ -11,6 +11,16 @@ public class InteractableSignChoice : InteractableSign {
     private bool m_RemoveChoices;
 
     private bool m_IgnoreChoices;
+    private ObjectData m_Data;
+
+    private void Start() {
+        m_Data = DataController.Instance.FindThis(this.name, GetType().ToString());
+        if (m_Data == null) return;
+        m_RemoveChoices = m_Data.keyVariable;
+        if (m_Data.SignChoiceMessageOverride) Messages = m_Data.SignChoiceMessage;
+        enabled = m_Data.enabled;
+        gameObject.SetActive(m_Data.enabledGameObject);
+    }
 
     public override void OnInteract(Character character) {
         base.OnInteract(character);
@@ -28,10 +38,18 @@ public class InteractableSignChoice : InteractableSign {
             }
         }
 
-        if ((extra & ChoiceOptions.Override) == ChoiceOptions.Override) Messages = newMessages;
+        if ((extra & ChoiceOptions.Override) == ChoiceOptions.Override) {
+            Messages = newMessages;
+            if(m_Data != null) {
+                m_Data.SignChoiceMessageOverride = true;
+                m_Data.SignChoiceMessage = newMessages;
+            }
+        }
         Init(character, newMessages);
         m_IgnoreChoices = (extra & ChoiceOptions.EndInteraction) == ChoiceOptions.EndInteraction;
         m_RemoveChoices = (extra & ChoiceOptions.RemoveChoices) == ChoiceOptions.RemoveChoices;
+
+        m_Data.keyVariable = m_RemoveChoices;
 
         DisplayNextMessage(character);
     }

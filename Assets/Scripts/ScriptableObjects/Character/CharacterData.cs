@@ -32,8 +32,11 @@ public class CharacterData : ScriptableObject {
     }
 
     public Vector3 Position {
-        get { return m_Position; }
-        set { m_Position = value; }
+        get {
+            return m_Position;
+        }set {
+            m_Position = value;
+        }
     }
 }
 

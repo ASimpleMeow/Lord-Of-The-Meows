@@ -12,7 +12,7 @@ public class InteractableSign : InteractableBase {
     protected Queue<string> m_MessageQueue;
     protected Coroutine m_TypeMessageCoroutine;
 
-    private void Start() {
+    private void Awake() {
         m_MessageQueue = new Queue<string>();
         m_TypeMessageCoroutine = null;
     }

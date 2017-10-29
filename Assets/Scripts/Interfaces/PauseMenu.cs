@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,10 @@ public class PauseMenu : MonoBehaviour {
     private Character Character;
     [SerializeField]
     private GameObject Menu;
+    [SerializeField]
+    private CharacterData CharacterData;
+    [SerializeField]
+    private List<LevelData> LevelDatas;
 
     private int m_SelectedIndex;
     private Button[] m_MenuButtons;
@@ -71,7 +76,31 @@ public class PauseMenu : MonoBehaviour {
         m_MenuButtons[m_SelectedIndex].Select();
     }
 
+    public void OnLoad() {
+        foreach (LevelData data in LevelDatas) {
+            string path = Application.dataPath + "/Resources/Data/" + data.LevelName + "/SaveFile.json";
+            if (File.Exists(path)) {
+                string dataAsJson = File.ReadAllText(path);
+                JsonUtility.FromJsonOverwrite(dataAsJson, data);
+            } else {
+                Debug.LogWarning(path);
+            }
+        }
+    }
+
     public void OnExit() {
+        Debug.Log("GAME SAVED");
+
+        CharacterData.Level = SceneController.Instance.CurrentScene;
+        string path = Application.dataPath + "/Resources/Data/Character/SaveFile.json";
+        string saveData = JsonUtility.ToJson(CharacterData);
+        File.WriteAllText(path, saveData);
+
+        foreach (LevelData data in LevelDatas) {
+            path = Application.dataPath + "/Resources/Data/" + data.LevelName + "/SaveFile.json";
+            saveData = JsonUtility.ToJson(data);
+            File.WriteAllText(path, saveData);
+        }
         Application.Quit();
     }
 }

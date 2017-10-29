@@ -17,6 +17,7 @@ public class InteractableChest : InteractableBase {
 
     private bool m_IsOpen;
     private MeshFilter m_MeshFilter;
+    private ObjectData m_Data;
 
     private void Awake() {
         m_MeshFilter = GetComponent<MeshFilter>();
@@ -24,12 +25,19 @@ public class InteractableChest : InteractableBase {
 
     private void Start() {
         m_IsOpen = false;
+        m_Data = DataController.Instance.FindThis(this.name, GetType().Name);
+        if (m_Data == null) return;
+        m_IsOpen = m_Data.keyVariable;
+        enabled = m_Data.enabled;
+        gameObject.SetActive(m_Data.enabledGameObject);
     }
 
     public override void OnInteract(Character character) {
 
         if (m_IsOpen) {
-            if(OpenedChestMessage != null) OpenedChestMessage.OnInteract(character);
+            if (OpenChestMesh != null) m_MeshFilter.mesh = OpenChestMesh;
+            if (OpenedChestMessage != null) OpenedChestMessage.OnInteract(character);
+            if(m_Data != null) m_Data.keyVariable = m_IsOpen;
             return;
         }
 

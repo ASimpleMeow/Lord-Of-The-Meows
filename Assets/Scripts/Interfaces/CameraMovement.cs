@@ -1,16 +1,14 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+[System.Serializable]
 [RequireComponent(typeof(Camera))]
 public class CameraMovement : MonoBehaviour {
 
     public float OffsetX;
     public float OffsetZ;
     public float Speed;
-
-    // Inspector fields
-    [SerializeField]
-    private Transform Target;
+    public Transform Target;
 
     private Vector3 m_NewPosition;
 

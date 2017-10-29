@@ -2,6 +2,3 @@ sceneSetups:
 - path: Assets/Scenes/PersistentScene.unity
   isLoaded: 1
   isActive: 1
-- path: Assets/Scenes/Village.unity
-  isLoaded: 1
-  isActive: 0

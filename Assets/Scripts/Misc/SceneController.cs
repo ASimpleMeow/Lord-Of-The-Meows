@@ -14,6 +14,8 @@ public class SceneController : MonoBehaviour {
 
     public static SceneController Instance;
 
+    public int CurrentScene;
+
     private bool m_GameStart;
     private int m_LastScene;
 
@@ -27,8 +29,6 @@ public class SceneController : MonoBehaviour {
         if (m_GameStart) return;
 
         Instance = this;
-        LoadScene(StartSceneIndex);
-        m_LastScene = StartSceneIndex;
         m_GameStart = true;
     }
 
@@ -69,6 +69,7 @@ public class SceneController : MonoBehaviour {
         m_LoadingOperation = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
         yield return m_LoadingOperation;
         if (m_LoadingOperation.isDone) FadeScreen.Fade(-1, ScreenFadeSpeed);
+        CurrentScene = scene;
     }
 
     IEnumerator Unload(int scene) {

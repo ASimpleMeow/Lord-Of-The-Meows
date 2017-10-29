@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scripts\Interfaces\FadeScreen.cs" />
     <Compile Include="Assets\Scripts\Interfaces\HealthUI.cs" />
     <Compile Include="Assets\Scripts\Interfaces\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\Misc\DataController.cs" />
     <Compile Include="Assets\Scripts\Misc\Enums.cs" />
     <Compile Include="Assets\Scripts\Misc\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\Misc\SceneController.cs" />
@@ -116,10 +117,12 @@
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableSignChoice.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableSignRemove.cs" />
     <Compile Include="Assets\Scripts\Objects\ItemSlot.cs" />
+    <Compile Include="Assets\Scripts\Objects\PlotBarrier.cs" />
     <Compile Include="Assets\Scripts\Objects\Weapon\WeaponCollider.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Character\CharacterData.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Databases\Database.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Databases\ItemDatabase.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\LevelData\LevelData.cs" />
     <Compile Include="Assets\Scripts\testScenes.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

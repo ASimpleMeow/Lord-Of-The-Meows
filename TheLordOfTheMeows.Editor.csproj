@@ -132,6 +132,7 @@
     <Compile Include="Assets\Scripts\Editor\CharacterDataCreator.cs" />
     <Compile Include="Assets\Scripts\Editor\EnumFlagsAttributeDrawer.cs" />
     <Compile Include="Assets\Scripts\Editor\ItemDatabaseCreator.cs" />
+    <Compile Include="Assets\Scripts\Editor\LevelDataCreator.cs" />
     <Compile Include="Assets\Scripts\Editor\ScriptableObjectUtility.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

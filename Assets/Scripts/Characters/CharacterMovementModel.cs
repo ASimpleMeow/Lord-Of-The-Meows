@@ -26,10 +26,12 @@ public class CharacterMovementModel : MonoBehaviour {
 
     // Components
     private Rigidbody m_Body;
+    private Character m_Character;
 
 
     private void Awake() {
         m_Body = GetComponent<Rigidbody>();
+        m_Character = GetComponent<Character>();
         if (Weapon != null) Weapon.SetActive(false);
     }
 
@@ -37,6 +39,8 @@ public class CharacterMovementModel : MonoBehaviour {
         SetDirection(new Vector3(0, 0,-1));
         IsRunning = false;
         m_CanAttack = true;
+        if (m_Character.Data == null) return;
+        transform.position = m_Character.Data.Position;
     }
 	
 	private void FixedUpdate () {
@@ -57,6 +61,9 @@ public class CharacterMovementModel : MonoBehaviour {
                                         m_Body.velocity.y,
                                         (m_MovementDirection.z * (IsRunning ? RunSpeed : WalkSpeed)));
         m_Body.velocity = velocity;
+
+        if (m_Character.Data == null) return;
+        m_Character.Data.Position = transform.position;
     }
 
     public void SetDirection(Vector3 direction) {

@@ -248,7 +248,7 @@ Transform:
   - {fileID: 397652075}
   - {fileID: 191876674}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &110970499
 GameObject:
@@ -318,7 +318,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719799263444880, guid: b60d782bf1c3dac4bacfcf9ea481b4b0, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1204579099671322, guid: b60d782bf1c3dac4bacfcf9ea481b4b0, type: 2}
       propertyPath: m_Name
@@ -652,7 +652,7 @@ Animator:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 357685242}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 87813a2020e687e47b062379023a90fa, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 53694888c6f27fa45869e17eb9d18d8e, type: 3}
   m_Controller: {fileID: 9100000, guid: adb2a3f8cea329b44b6f98d63b3ab434, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -799,7 +799,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &482258343
 MonoBehaviour:
@@ -854,6 +854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 547426443}
   - component: {fileID: 547426442}
+  - component: {fileID: 547426444}
   m_Layer: 0
   m_Name: PlotBarrier
   m_TagString: Untagged
@@ -887,26 +888,19 @@ Transform:
   - {fileID: 250802286}
   - {fileID: 1719474607}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &601981952 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1204579099671322, guid: b60d782bf1c3dac4bacfcf9ea481b4b0,
-    type: 2}
-  m_PrefabInternal: {fileID: 2105812833}
---- !u!114 &601981953
+--- !u!114 &547426444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 601981952}
+  m_GameObject: {fileID: 547426441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3175eeb8128830e4b9503b4db3ecc1ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c985b45ed4e08e4e8e853d5215c5f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Messages:
-  - It would be unwise to leave without speaking with his majesty, the king!
 --- !u!4 &601981958 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4719799263444880, guid: b60d782bf1c3dac4bacfcf9ea481b4b0,
@@ -986,7 +980,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4703912394848314, guid: e186d1cae386cf74fb8616b05a333159, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114248278975710794, guid: e186d1cae386cf74fb8616b05a333159,
         type: 2}
@@ -1382,7 +1376,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 13.152, y: 0, z: 0}
 --- !u!1 &1042702171
 GameObject:
@@ -1605,33 +1599,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719799263444880, guid: b60d782bf1c3dac4bacfcf9ea481b4b0, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b60d782bf1c3dac4bacfcf9ea481b4b0, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1191289402 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1204579099671322, guid: b60d782bf1c3dac4bacfcf9ea481b4b0,
-    type: 2}
-  m_PrefabInternal: {fileID: 1191289401}
---- !u!114 &1191289403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1191289402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3175eeb8128830e4b9503b4db3ecc1ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Messages:
-  - 'Before you is the king of cats
-
-    His majesty'
-  - King Schrodinger The Paw-sitive. Ruler of our land!
-  - You may now speak with his majesty
 --- !u!1001 &1193311565
 Prefab:
   m_ObjectHideFlags: 0
@@ -1669,7 +1641,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4534152758959538, guid: a302e33c4522cb349973f7d9f04d4de8, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 198911312529875554, guid: a302e33c4522cb349973f7d9f04d4de8,
         type: 2}
@@ -1767,8 +1739,50 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 15.672001, y: -9.712001, z: 15.080001}
+--- !u!1001 &1314724700
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4735613899511480, guid: f635c86a923f23d41b75ec0c7855fe87, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.6291504
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735613899511480, guid: f635c86a923f23d41b75ec0c7855fe87, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.7382812
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735613899511480, guid: f635c86a923f23d41b75ec0c7855fe87, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -3.9121094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735613899511480, guid: f635c86a923f23d41b75ec0c7855fe87, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735613899511480, guid: f635c86a923f23d41b75ec0c7855fe87, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735613899511480, guid: f635c86a923f23d41b75ec0c7855fe87, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735613899511480, guid: f635c86a923f23d41b75ec0c7855fe87, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735613899511480, guid: f635c86a923f23d41b75ec0c7855fe87, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f635c86a923f23d41b75ec0c7855fe87, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1318307809
 GameObject:
   m_ObjectHideFlags: 0
@@ -2045,7 +2059,7 @@ Transform:
   m_Children:
   - {fileID: 357685243}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 81.96001, z: 0}
 --- !u!114 &1418708875
 MonoBehaviour:
@@ -2061,6 +2075,7 @@ MonoBehaviour:
   WalkSpeed: 0
   RunSpeed: 0
   RotationSpeed: 0
+  Weapon: {fileID: 0}
 --- !u!114 &1418708876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2269,7 +2284,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4164987342405228, guid: 06e9ffc6541920146b404316fe817c91, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114453645268856354, guid: 06e9ffc6541920146b404316fe817c91,
         type: 2}
@@ -2280,7 +2295,7 @@ Prefab:
         type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 4300000, guid: 87813a2020e687e47b062379023a90fa, type: 3}
+      objectReference: {fileID: 4300000, guid: 53694888c6f27fa45869e17eb9d18d8e, type: 3}
     m_RemovedComponents:
     - {fileID: 114196349402547954, guid: 06e9ffc6541920146b404316fe817c91, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 06e9ffc6541920146b404316fe817c91, type: 2}
@@ -2861,14 +2876,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4719799263444880, guid: b60d782bf1c3dac4bacfcf9ea481b4b0, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4719799263444880, guid: b60d782bf1c3dac4bacfcf9ea481b4b0, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b60d782bf1c3dac4bacfcf9ea481b4b0, type: 2}
   m_IsPrefabParent: 0
@@ -2940,7 +2947,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 87813a2020e687e47b062379023a90fa, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 53694888c6f27fa45869e17eb9d18d8e, type: 3}
   m_Bones:
   - {fileID: 1890344986}
   - {fileID: 246672885}

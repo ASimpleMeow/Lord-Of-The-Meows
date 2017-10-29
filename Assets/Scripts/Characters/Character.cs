@@ -16,12 +16,27 @@ public class Character : MonoBehaviour {
 
     public void Awake() {
         if (Data == null) return;
-        string path = Application.dataPath + "/Resources/Data/Character/" + DefaultDataName;
+        string path = Application.dataPath + "/Resources/Data/Character/" + "/SaveFile.json";
+        if (File.Exists(path)) {
+            string dataAsJson = File.ReadAllText(path);
+            JsonUtility.FromJsonOverwrite(dataAsJson, Data);
+        } else {
+            path = Application.dataPath + "/Resources/Data/Character/" + DefaultDataName;
+            if (File.Exists(path)) {
+                string dataAsJson = File.ReadAllText(path);
+                JsonUtility.FromJsonOverwrite(dataAsJson, Data);
+            } else {
+                Debug.LogWarning(path);
+            }
+        }
+
+        SceneController.Instance.LoadScene(Data.Level);
+        /*string path = Application.dataPath + "/Resources/Data/Character/" + DefaultDataName;
         if (File.Exists(path)) {
             string dataAsJson = File.ReadAllText(path);
             JsonUtility.FromJsonOverwrite(dataAsJson, Data);
         } else {
             Debug.LogWarning(path);
-        }
+        }*/
     }
 }
