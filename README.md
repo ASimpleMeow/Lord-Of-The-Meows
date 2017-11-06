@@ -163,3 +163,8 @@ Further reading :
 - Implement saving and loading leveldata
 - Implement Saving and Loading game from Menu
 - Bug fixing
+	
+  
+&nbsp;
+06-11-2017
+- Change Character movement as per feedback recommendations

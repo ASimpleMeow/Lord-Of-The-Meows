@@ -36,7 +36,7 @@ public class CharacterMovementModel : MonoBehaviour {
     }
 
     private void Start () {
-        SetDirection(new Vector3(0, 0,-1));
+        SetDirection(transform.forward, Vector3.zero);
         IsRunning = false;
         m_CanAttack = true;
         if (m_Character.Data == null) return;
@@ -64,6 +64,19 @@ public class CharacterMovementModel : MonoBehaviour {
 
         if (m_Character.Data == null) return;
         m_Character.Data.Position = transform.position;
+    }
+
+    public void SetDirection(Vector3 direction, Vector3 rotation) {
+
+        if (IsFrozen || IsAttacking) return;
+
+        m_MovementDirection = direction;
+
+        // Handle rotation of character
+        if (rotation != Vector3.zero) {
+            transform.Rotate(rotation * RotationSpeed);
+        }
+
     }
 
     public void SetDirection(Vector3 direction) {

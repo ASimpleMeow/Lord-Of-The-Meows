@@ -20,7 +20,11 @@ public class CameraMovement : MonoBehaviour {
 
     private void Awake() {
         if (Data == null) return;
-        string path = Application.persistentDataPath+ "/CameraSaveFile.json";
+    }
+
+    private void Start() {
+
+        string path = Application.persistentDataPath + "/CameraSaveFile.json";
         if (File.Exists(path)) {
             string dataAsJson = File.ReadAllText(path);
             JsonUtility.FromJsonOverwrite(dataAsJson, Data);
@@ -29,9 +33,6 @@ public class CameraMovement : MonoBehaviour {
             TextAsset t = Resources.Load<TextAsset>(path.Replace(".json", ""));
             JsonUtility.FromJsonOverwrite(t.text, Data);
         }
-    }
-
-    private void Start() {
         OffsetX = Data.OffsetX;
         OffsetZ = Data.OffsetZ;
         Speed = Data.Speed;

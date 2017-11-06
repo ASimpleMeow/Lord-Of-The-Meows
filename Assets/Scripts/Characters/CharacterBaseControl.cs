@@ -11,6 +11,11 @@ public class CharacterBaseControl : MonoBehaviour {
     }
 
     //---------MOVEMENT CONTROL------------//
+    protected void SetDirection(Vector3 direction, Vector3 rotation) {
+        if (m_Character.Movement == null) return;
+        m_Character.Movement.SetDirection(direction, rotation);
+    }
+
     protected void SetDirection(Vector3 direction) {
         if (m_Character.Movement == null) return;
         m_Character.Movement.SetDirection(direction);

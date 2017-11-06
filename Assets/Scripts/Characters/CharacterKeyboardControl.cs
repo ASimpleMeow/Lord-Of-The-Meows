@@ -21,11 +21,19 @@ public class CharacterKeyboardControl : CharacterBaseControl {
     }
 
     private void UpdateDirection() {
-        Vector3 newDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
+        Vector3 newDirection = new Vector3(0, 0, 0);
+        Vector3 newRotation = new Vector3(0, 0, 0);
+        if (Input.GetAxisRaw("Vertical") > 0) newDirection = -transform.forward;
+        else if (Input.GetAxisRaw("Vertical") < 0) newDirection = transform.forward;
+
+        if(Input.GetAxisRaw("Horizontal") != 0) {
+            newRotation = new Vector3(0, -Input.GetAxisRaw("Horizontal"), 0);
+            newRotation.Normalize();
+        }
 
         if (Input.GetKey(KeyCode.LeftShift)) SetRunning(true);
         else SetRunning(false);
 
-        SetDirection(newDirection);
+        SetDirection(newDirection, newRotation);
     }
 }

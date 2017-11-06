@@ -1,4 +1,4 @@
-WebGL
+WindowsStandalone
 f445f6a731a8408091800282585db1a6 Assembly-CSharp.dll:.ChoiceRemoveObject
 110dd4f16fbc423ee3d36e6cc0af5f9c Assembly-CSharp.dll:.DataController
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
@@ -50,7 +50,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-fe1c2d4b04e174f28244929ea4133518 Assembly-CSharp.dll:.CharacterSpawn
+9a527fdef0273f49b7adae3355a331cc Assembly-CSharp.dll:.CharacterSpawn
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -171,7 +171,7 @@ fb62c7a56ab1eac77a4243149c1e7f33 Assembly-CSharp.dll:.ChoiceExit
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.testScenes
 5681e8203944783d5cf9166652bc44bf Assembly-CSharp.dll:.InteractableChest
 417c5cc2e54eda86500ded8396928dfe Assembly-CSharp.dll:.ChoiceDialog
+816dc7b50398e040864d81636e58119f Assembly-CSharp.dll:.SaverLoader
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Database
 e5cfe409f55709b5b1800f10d69e3f8c Assembly-CSharp.dll:.CharacterMovementModel
 f1b177ca5340829b16ad00a36bfe7126 Assembly-CSharp.dll:.EnemyCharacterCollision
-816dc7b50398e040864d81636e58119f Assembly-CSharp.dll:.SaverLoader
