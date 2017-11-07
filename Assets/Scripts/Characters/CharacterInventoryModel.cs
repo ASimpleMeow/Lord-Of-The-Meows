@@ -31,9 +31,7 @@ public class CharacterInventoryModel : MonoBehaviour {
     public void AddItem(ItemType itemType, int amount) {
 
         if (m_Character.Movement.IsFrozen) return;
-
-        if (m_Character.Data.Inventory.Contains(itemType)) m_Character.Data.Inventory.AddAmount(itemType, amount);
-        else m_Character.Data.Inventory.Add(itemType, amount);
+        m_Character.Data.Inventory.Add(itemType, amount);
     }
 
     public void RemoveItem(ItemType itemType) {
@@ -44,7 +42,7 @@ public class CharacterInventoryModel : MonoBehaviour {
 
         if (!m_Character.Data.Inventory.Contains(itemType) || m_Character.Movement.IsFrozen) return;
 
-        if (m_Character.Data.Inventory.ItemAmount(itemType) > amount) m_Character.Data.Inventory.AddAmount(itemType, -amount);
+        if (m_Character.Data.Inventory.ItemAmount(itemType) > amount) m_Character.Data.Inventory.Add(itemType, -amount);
         else m_Character.Data.Inventory.Remove(itemType);
     }
 

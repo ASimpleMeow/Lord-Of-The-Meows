@@ -28,7 +28,7 @@ public class ItemSlot : MonoBehaviour {
         m_ItemType = itemType;
         m_Amount = amount;
 
-        SetSprite(Database.Item.FindItem(m_ItemType).ItemSprite);
+        SetSprite(Database.Item.FindItem(itemType) == null ? null : Database.Item.FindItem(m_ItemType).ItemSprite);
         if (m_Amount > 1) m_StackText.text = m_Amount.ToString();
         else m_StackText.text = "";
     }

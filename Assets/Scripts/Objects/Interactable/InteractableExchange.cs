@@ -21,12 +21,12 @@ public class InteractableExchange : InteractableBase {
     }
 
     public override void OnUse(Character character, ItemType itemType) {
-        if (character.Inventory == null || character.Data == null) return;
+        if (character == null || character.Inventory == null || character.Data == null) return;
 
         if (!character.Data.Inventory.Contains(ItemNeeded)) return;
         if (character.Data.Inventory.ItemAmount(ItemNeeded) < AmountNeeded) return;
 
-        character.Inventory.RemoveItem(ItemNeeded, AmountNeeded);
         character.Inventory.AddItem(ItemGiven, AmountGiven);
+        character.Inventory.RemoveItem(ItemNeeded, AmountNeeded);
     } 
 }

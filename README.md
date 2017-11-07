@@ -168,3 +168,8 @@ Further reading :
 &nbsp;
 06-11-2017
 - Change Character movement as per feedback recommendations
+	
+  
+&nbsp;
+07-11-2017
+- Fix inventory bug

@@ -41,6 +41,7 @@ public class CharacterMovementModel : MonoBehaviour {
         m_CanAttack = true;
         if (m_Character.Data == null) return;
         transform.position = m_Character.Data.Position;
+        transform.eulerAngles = m_Character.Data.Rotation;
     }
 	
 	private void FixedUpdate () {
@@ -64,6 +65,7 @@ public class CharacterMovementModel : MonoBehaviour {
 
         if (m_Character.Data == null) return;
         m_Character.Data.Position = transform.position;
+        m_Character.Data.Rotation = transform.eulerAngles;
     }
 
     public void SetDirection(Vector3 direction, Vector3 rotation) {

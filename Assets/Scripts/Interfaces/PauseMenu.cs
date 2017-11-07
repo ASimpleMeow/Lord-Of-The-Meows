@@ -10,12 +10,6 @@ public class PauseMenu : MonoBehaviour {
     private Character Character;
     [SerializeField]
     private GameObject Menu;
-   /* [SerializeField]
-    private CharacterData CharacterData;
-    [SerializeField]
-    private CameraData CameraData;
-    [SerializeField]
-    private List<LevelData> LevelDatas;*/
 
     private int m_SelectedIndex;
     private Button[] m_MenuButtons;
@@ -83,32 +77,8 @@ public class PauseMenu : MonoBehaviour {
         CharacterData characterData = SaverLoader.LoadCharacter();
         SaverLoader.LoadCamera();
         SaverLoader.LoadLevels();
-        /*string path = Application.persistentDataPath + "/CharacterSaveFile.json";
-        if (File.Exists(path)) {
-            string dataAsJson = File.ReadAllText(path);
-            JsonUtility.FromJsonOverwrite(dataAsJson, CharacterData);
-        } else {
-            Debug.LogWarning(path);
-        }
-
-        path = Application.persistentDataPath + "/CameraSaveFile.json";
-        if (File.Exists(path)) {
-            string dataAsJson = File.ReadAllText(path);
-            JsonUtility.FromJsonOverwrite(dataAsJson, CameraData);
-        } else {
-            Debug.LogWarning(path);
-        }
-
-        foreach (LevelData data in LevelDatas) {
-            path = Application.persistentDataPath + "/"+data.LevelName + "SaveFile.json";
-            if (File.Exists(path)) {
-                string dataAsJson = File.ReadAllText(path);
-                JsonUtility.FromJsonOverwrite(dataAsJson, data);
-            } else {
-                Debug.LogWarning(path);
-            }
-        }*/
-
+        Character.transform.position = characterData.Position;
+        Character.transform.eulerAngles = characterData.Rotation;
         OnMenuButton();
         SceneController.Instance.ChangeScene(SceneController.Instance.CurrentScene, characterData.Level);
 

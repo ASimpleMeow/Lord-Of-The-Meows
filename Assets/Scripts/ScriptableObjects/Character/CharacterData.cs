@@ -13,6 +13,8 @@ public class CharacterData : ScriptableObject {
     private int m_Level;
     [SerializeField]
     private Vector3 m_Position;
+    [SerializeField]
+    private Vector3 m_Rotation;
 
     public int Health {
         get { return m_Health; }
@@ -36,6 +38,14 @@ public class CharacterData : ScriptableObject {
             return m_Position;
         }set {
             m_Position = value;
+        }
+    }
+
+    public Vector3 Rotation {
+        get {
+            return m_Rotation;
+        } set {
+            m_Rotation = value;
         }
     }
 }
@@ -66,29 +76,44 @@ public class Inventory {
         return 0;
     }
 
-    public void AddAmount(ItemType type, int amount) {
-        for (int i = 0; i < m_ItemTypes.Count; ++i) {
-            if (m_ItemTypes[i] == type) {
-                m_ItemAmount[i] += amount;
+    public void Add(ItemType type, int amount) {
+        if (Contains(type)) {
+            for(int i = 0; i < m_ItemTypes.Count; ++i) {
+                if(m_ItemTypes[i] == type) {
+                    m_ItemAmount[i] += amount;
+                    return;
+                }
             }
         }
-    }
-
-    public void Add(ItemType type, int amount) {
         m_ItemTypes.Add(type);
         m_ItemAmount.Add(amount);
     }
 
     public void Remove(ItemType type) {
-        int removeIndex = 0;
+        if (!Contains(type)) return;
         for (int i = 0; i < m_ItemTypes.Count; ++i) {
             if (m_ItemTypes[i] == type) {
-                removeIndex = i;
+                m_ItemTypes[i] = ItemType.NONE;
+                m_ItemAmount[i] = 0;
                 break;
             }
         }
-        m_ItemTypes.RemoveAt(removeIndex);
-        m_ItemAmount.RemoveAt(removeIndex);
+
+        for(int i = 0; i < m_ItemTypes.Count; ++i) {
+            if (m_ItemTypes[i] == ItemType.NONE) continue;
+            Debug.Log("Sorting : " + i + " - " + m_ItemTypes[i]);
+            int index = i-1;
+            int temp = i;
+            while(index >= 0) {
+                if (m_ItemTypes[index] != ItemType.NONE) break;
+                m_ItemTypes[index] = m_ItemTypes[temp];
+                m_ItemAmount[index] = m_ItemAmount[temp];
+                m_ItemTypes[temp] = ItemType.NONE;
+                m_ItemAmount[temp] = 0;
+                temp = index;
+                index--;
+            }
+        }
     }
 
     public List<ItemType> Keys {
