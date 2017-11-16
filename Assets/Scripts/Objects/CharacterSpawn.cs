@@ -36,7 +36,6 @@ public class CharacterSpawn : MonoBehaviour {
         }
         if (m_Camera != null) {
             CameraMovement cameraMovement = m_Camera.GetComponent<CameraMovement>();
-            Debug.Log(cameraMovement == null);
             if (CameraPosition != new Vector3(0, 0, 0)) {
                 m_Camera.transform.position = CameraPosition;
                 cameraMovement.Data.NewPosition = CameraPosition;

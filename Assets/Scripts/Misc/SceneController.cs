@@ -29,7 +29,7 @@ public class SceneController : MonoBehaviour {
         if (m_GameStart) return;
         Instance = this;
         m_GameStart = true;
-        CurrentScene = 1;
+        CurrentScene = 2;
         Instance.LoadScene(CurrentScene);
     }
 

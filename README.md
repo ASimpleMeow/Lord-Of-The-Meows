@@ -173,3 +173,8 @@ Further reading :
 &nbsp;
 07-11-2017
 - Fix inventory bug
+	
+  
+&nbsp;
+16-11-2017
+- Create splash screen

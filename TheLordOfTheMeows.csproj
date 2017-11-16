@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scripts\Interfaces\FadeScreen.cs" />
     <Compile Include="Assets\Scripts\Interfaces\HealthUI.cs" />
     <Compile Include="Assets\Scripts\Interfaces\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\SplashScreenMenu.cs" />
     <Compile Include="Assets\Scripts\Misc\DataController.cs" />
     <Compile Include="Assets\Scripts\Misc\Enums.cs" />
     <Compile Include="Assets\Scripts\Misc\SaverLoader.cs" />

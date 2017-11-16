@@ -90,20 +90,6 @@ public class PauseMenu : MonoBehaviour {
         SaverLoader.SaveCharacter();
         SaverLoader.SaveCamera();
         SaverLoader.SaveLevels();
-        /*CharacterData.Level = SceneController.Instance.CurrentScene;
-        string path = Application.persistentDataPath + "/CharacterSaveFile.json";
-        string saveData = JsonUtility.ToJson(CharacterData);
-        File.WriteAllText(path, saveData);
-
-        path = Application.persistentDataPath + "/CameraSaveFile.json";
-        saveData = JsonUtility.ToJson(CameraData);
-        File.WriteAllText(path, saveData);
-
-        foreach (LevelData data in LevelDatas) {
-            path = Application.persistentDataPath +"/"+ data.LevelName + "SaveFile.json";
-            saveData = JsonUtility.ToJson(data);
-            File.WriteAllText(path, saveData);
-        }*/
         Application.Quit();
     }
 }
