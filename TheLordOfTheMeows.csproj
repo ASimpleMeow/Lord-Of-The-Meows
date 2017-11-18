@@ -88,7 +88,9 @@
     <Compile Include="Assets\Scripts\Characters\CharacterMovementModel.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterMovementView.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterPickUpModel.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyBaseController.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyCharacterCollision.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyMediumAIController.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyProximitySensor.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySimpleAIController.cs" />
     <Compile Include="Assets\Scripts\Interfaces\CameraMovement.cs" />

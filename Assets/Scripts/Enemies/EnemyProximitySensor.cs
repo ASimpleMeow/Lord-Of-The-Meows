@@ -7,7 +7,7 @@ public class EnemyProximitySensor : MonoBehaviour {
     [SerializeField]
     private Collider ColliderSensor;
     [SerializeField]
-    private EnemySimpleAIController Controller;
+    private EnemyBaseController Controller;
 
     private void Awake() {
         if(ColliderSensor == null) {
@@ -25,6 +25,8 @@ public class EnemyProximitySensor : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider) {
         if (collider.tag == "Player") {
+            CharacterHealthModel playerHealthModel = collider.gameObject.GetComponent<CharacterHealthModel>();
+            if (playerHealthModel == null || playerHealthModel.IsDead) return;
             Controller.CharacterInRange = collider.gameObject;
         }
     }
@@ -32,6 +34,8 @@ public class EnemyProximitySensor : MonoBehaviour {
     void OnTriggerExit(Collider collider) {
         if (collider.tag == "Player") {
             Controller.CharacterInRange = null;
+            EnemyMediumAIController controller = GetComponent<EnemyMediumAIController>();
+            if (controller != null && controller.RunAway) controller.RunAway = false;
         }
     }
 }

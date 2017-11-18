@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySimpleAIController : CharacterBaseControl {
+public class EnemySimpleAIController : EnemyBaseController {
 
     [SerializeField]
     private int AttackDamage;
@@ -10,13 +10,12 @@ public class EnemySimpleAIController : CharacterBaseControl {
     private float CharacterPushBack = 5.5f;
     [SerializeField]
     private AttackableEnemy m_AttackableEnemy;
-    private GameObject m_CharacterInRange;
 
     private void Update() {
         UpdateDirection();
     }
 
-    void UpdateDirection() {
+    private void UpdateDirection() {
         Vector3 direction = Vector3.zero;
 
         if (m_CharacterInRange != null) {
@@ -31,12 +30,7 @@ public class EnemySimpleAIController : CharacterBaseControl {
         SetDirection(direction);
     }
 
-    public GameObject CharacterInRange {
-        get { return m_CharacterInRange; }
-        set { m_CharacterInRange = value; }
-    }
-
-    public void OnHitCharacter(Character character) {
+    public override void OnHitCharacter(Character character) {
         Vector3 direction = character.transform.position - transform.position;
         direction.Normalize();
         direction.y *= 0;

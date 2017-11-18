@@ -38,8 +38,11 @@ public class AttackableEnemy : AttackableBase {
             ThisCharacter.Movement.Push(direction, PushBackMagnitude*1000);
         }
 
-        float damage = 10; //Change at some point
+        float damage = 10;
         m_Health -= damage;
+
+        EnemyMediumAIController mediumController = GetComponent<EnemyMediumAIController>();
+        if (mediumController != null) mediumController.RunAway = true;
 
         DamageNumbers.Instance.ShowDamageNumber(damage, transform.position);
 

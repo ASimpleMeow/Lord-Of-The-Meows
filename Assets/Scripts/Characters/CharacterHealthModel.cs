@@ -26,6 +26,14 @@ public class CharacterHealthModel : MonoBehaviour {
         get { return m_MaxHealth; }
     }
 
+    public bool IsDead {
+        get { return m_Character.Data.Health <= 0; }
+    }
+
+    public int Health {
+        get { return m_Character.Data.Health; }
+    }
+
     public bool DealDamage(int damage) {
         if (m_Character.Data.Health <= 0) return false;
 

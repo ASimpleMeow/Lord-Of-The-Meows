@@ -187,3 +187,4 @@ Further reading :
 - Add Death effect to the enemies
 - Make Character be able to pick up Item Drops from enemies
 - Create chests that open and contain items
+- Implement Medium AI which will attack you repeatedly but will run away if he recieves damage 
