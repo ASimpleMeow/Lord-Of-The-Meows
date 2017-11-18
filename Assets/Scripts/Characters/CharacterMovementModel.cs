@@ -11,7 +11,9 @@ public class CharacterMovementModel : MonoBehaviour {
     [SerializeField]
     private float RunSpeed;
     [SerializeField]
-    private float RotationSpeed;
+    private float RotationSpeedMax;
+    [SerializeField]
+    private float RotationSpeedMin;
     [SerializeField]
     private GameObject Weapon;
 
@@ -76,7 +78,9 @@ public class CharacterMovementModel : MonoBehaviour {
 
         // Handle rotation of character
         if (rotation != Vector3.zero) {
-            transform.Rotate(rotation * RotationSpeed);
+            float rotationSpeed = RotationSpeedMax;
+            if (m_Body.velocity.magnitude >= (2 * RunSpeed) / 3) rotationSpeed = RotationSpeedMin;
+            transform.Rotate(rotation * rotationSpeed);
         }
 
     }
@@ -93,7 +97,7 @@ public class CharacterMovementModel : MonoBehaviour {
             m_TargetRotation = Quaternion.LookRotation(m_FacingDirection);
             transform.eulerAngles = Vector3.up * Mathf.MoveTowardsAngle(transform.eulerAngles.y,
                                                                         m_TargetRotation.eulerAngles.y,
-                                                                        RotationSpeed * Time.deltaTime);
+                                                                        RotationSpeedMax * Time.deltaTime);
         }
 
     }

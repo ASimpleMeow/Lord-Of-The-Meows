@@ -184,4 +184,6 @@ Further reading :
 18-11-2017
 - Create Forest Level
 - Make Enemies drop random item (Potions and Gold) depending on the Drop Rate
+- Add Death effect to the enemies
 - Make Character be able to pick up Item Drops from enemies
+- Create chests that open and contain items

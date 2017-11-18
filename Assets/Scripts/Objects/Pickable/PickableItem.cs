@@ -10,7 +10,6 @@ public class PickableItem : PickableBase {
     private int Amount;
 
     private void Awake() {
-        Debug.Log("Item Awake");
         GetComponent<Collider>().isTrigger = true;
     }
 
@@ -22,6 +21,10 @@ public class PickableItem : PickableBase {
 
         if(character.Inventory.AddItem(Type, Amount)) {
             Destroy(gameObject);
+        }
+
+        foreach(ItemType type in character.Data.Inventory.Keys) {
+            Debug.Log(type);
         }
     }
 }

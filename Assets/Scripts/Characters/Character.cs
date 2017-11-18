@@ -19,10 +19,12 @@ public class Character : MonoBehaviour {
         string path = Application.persistentDataPath + "/CharacterSaveFile.json";
         if (File.Exists(path)) {
             Data = SaverLoader.LoadCharacter();
+            Debug.Log("Character Data Loaded from file");
         } else {
             path = "Data/Character/" + DefaultDataName;
             TextAsset t = Resources.Load<TextAsset>(path.Replace(".json", ""));
             JsonUtility.FromJsonOverwrite(t.text, Data);
         }
+        SceneController.Instance.CurrentScene = Data.Level;
     }
 }

@@ -26,8 +26,8 @@ public class CameraMovement : MonoBehaviour {
 
         string path = Application.persistentDataPath + "/CameraSaveFile.json";
         if (File.Exists(path)) {
-            string dataAsJson = File.ReadAllText(path);
-            JsonUtility.FromJsonOverwrite(dataAsJson, Data);
+            Data = SaverLoader.LoadCamera();
+            Debug.Log("Camera Data Loaded from file");
         } else {
             path = "Data/Camera/" + DefaultDataName;
             TextAsset t = Resources.Load<TextAsset>(path.Replace(".json", ""));
@@ -43,6 +43,5 @@ public class CameraMovement : MonoBehaviour {
     private void FixedUpdate() {
         m_NewPosition = new Vector3(Target.position.x + OffsetX, transform.position.y, Target.position.z + OffsetZ);
         transform.position = Vector3.Lerp(transform.position, m_NewPosition, Speed * Time.deltaTime);
-        Data.NewPosition = transform.position;
     }
 }

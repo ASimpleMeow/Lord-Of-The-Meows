@@ -29,7 +29,6 @@ public class CharacterInventoryModel : MonoBehaviour {
     }
 
     public bool AddItem(ItemType itemType, int amount) {
-
         if (m_Character.Movement.IsFrozen) return false;
         m_Character.Data.Inventory.Add(itemType, amount);
         return true;

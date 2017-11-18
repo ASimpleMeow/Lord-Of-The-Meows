@@ -1,0 +1,13 @@
+{
+  "GameObjects": [
+    {
+      "objectName": "Chest",
+      "script": "InteractableChest",
+      "keyVariable": false,
+      "enabled": true,
+      "enabledGameObject": true,
+      "SignChoiceMessageOverride": false,
+      "SignChoiceMessage": [ ]
+    }
+  ]
+}

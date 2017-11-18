@@ -16,16 +16,19 @@ public class InteractableChest : InteractableBase {
     private InteractableSign OpenedChestMessage;
 
     private bool m_IsOpen;
-    private MeshFilter m_MeshFilter;
     private ObjectData m_Data;
+    private MeshFilter m_MeshFilter;
 
     private void Awake() {
         m_MeshFilter = GetComponent<MeshFilter>();
+        if(m_MeshFilter == null) {
+            m_MeshFilter = GetComponentInChildren<MeshFilter>();
+        }
     }
 
     private void Start() {
         m_IsOpen = false;
-        m_Data = DataController.Instance.FindThis(this.name, GetType().Name);
+        m_Data = DataController.Instance.FindThis(name, GetType().Name);
         if (m_Data == null) return;
         m_IsOpen = m_Data.keyVariable;
         enabled = m_Data.enabled;

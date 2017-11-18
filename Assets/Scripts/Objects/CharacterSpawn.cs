@@ -50,7 +50,7 @@ public class CharacterSpawn : MonoBehaviour {
                 cameraMovement.Data.NewRotation = CameraRotation;
                 m_Camera.transform.eulerAngles = CameraRotation;
             }
-            SaverLoader.SaveCamera();
+           // SaverLoader.SaveCamera();
         }
 
         if (ToRemoveOnLoad == null) return;

@@ -85,6 +85,15 @@ public class Inventory {
                 }
             }
         }
+
+        //Removing uneeded NONE items
+        for(int i = 0; i < m_ItemTypes.Count; ++i) {
+            if(m_ItemTypes[i] == ItemType.NONE) {
+                m_ItemTypes.RemoveAt(i);
+                m_ItemAmount.RemoveAt(i);
+            }
+        }
+
         m_ItemTypes.Add(type);
         m_ItemAmount.Add(amount);
     }
