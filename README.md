@@ -178,3 +178,10 @@ Further reading :
 &nbsp;
 16-11-2017
 - Create splash screen
+	
+  
+&nbsp;
+18-11-2017
+- Create Forest Level
+- Make Enemies drop random item (Potions and Gold) depending on the Drop Rate
+- Make Character be able to pick up Item Drops from enemies

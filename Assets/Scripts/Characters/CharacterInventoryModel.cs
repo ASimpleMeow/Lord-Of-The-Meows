@@ -24,26 +24,28 @@ public class CharacterInventoryModel : MonoBehaviour {
         return m_Character.Data.Inventory.ItemAmount(itemType);
     }
 
-    public void AddItem(ItemType itemType) {
-        AddItem(itemType, 1);
+    public bool AddItem(ItemType itemType) {
+        return AddItem(itemType, 1);
     }
 
-    public void AddItem(ItemType itemType, int amount) {
+    public bool AddItem(ItemType itemType, int amount) {
 
-        if (m_Character.Movement.IsFrozen) return;
+        if (m_Character.Movement.IsFrozen) return false;
         m_Character.Data.Inventory.Add(itemType, amount);
+        return true;
     }
 
-    public void RemoveItem(ItemType itemType) {
-        RemoveItem(itemType, 1);
+    public bool RemoveItem(ItemType itemType) {
+        return RemoveItem(itemType, 1);
     }
 
-    public void RemoveItem(ItemType itemType, int amount) {
+    public bool RemoveItem(ItemType itemType, int amount) {
 
-        if (!m_Character.Data.Inventory.Contains(itemType) || m_Character.Movement.IsFrozen) return;
+        if (!m_Character.Data.Inventory.Contains(itemType) || m_Character.Movement.IsFrozen) return false;
 
         if (m_Character.Data.Inventory.ItemAmount(itemType) > amount) m_Character.Data.Inventory.Add(itemType, -amount);
         else m_Character.Data.Inventory.Remove(itemType);
+        return true;
     }
 
     public void Use() {

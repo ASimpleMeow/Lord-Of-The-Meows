@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Characters\CharacterKeyboardControl.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterMovementModel.cs" />
     <Compile Include="Assets\Scripts\Characters\CharacterMovementView.cs" />
+    <Compile Include="Assets\Scripts\Characters\CharacterPickUpModel.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyCharacterCollision.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyProximitySensor.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySimpleAIController.cs" />
@@ -118,6 +119,9 @@
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableSignChoice.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable\InteractableSignRemove.cs" />
     <Compile Include="Assets\Scripts\Objects\ItemSlot.cs" />
+    <Compile Include="Assets\Scripts\Objects\Pickable\PickableBase.cs" />
+    <Compile Include="Assets\Scripts\Objects\Pickable\PickableItem.cs" />
+    <Compile Include="Assets\Scripts\Objects\Pickable\PickableSpinningEffect.cs" />
     <Compile Include="Assets\Scripts\Objects\PlotBarrier.cs" />
     <Compile Include="Assets\Scripts\Objects\Weapon\WeaponCollider.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Character\CameraData.cs" />

@@ -6,11 +6,11 @@ using System;
 public class SceneController : MonoBehaviour {
 
     [SerializeField]
-    private int StartSceneIndex;
-    [SerializeField]
     private float ScreenFadeSpeed = 30;
     [SerializeField]
     private float ScreenTransistionTime = 1;
+    [SerializeField]
+    private CharacterData CharacterData;
 
     public static SceneController Instance;
 
@@ -30,6 +30,7 @@ public class SceneController : MonoBehaviour {
         Instance = this;
         m_GameStart = true;
         CurrentScene = 2;
+        if (CharacterData != null && CharacterData.Level != CurrentScene) CurrentScene = CharacterData.Level;
         Instance.LoadScene(CurrentScene);
     }
 

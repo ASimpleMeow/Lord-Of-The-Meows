@@ -41,8 +41,6 @@ public class EnemySimpleAIController : CharacterBaseControl {
         direction.Normalize();
         direction.y *= 0;
 
-        m_CharacterInRange = null;
-
         //Debug.Log("Damage Dealth :" + AttackDamage);
         if (character == null) return;
 

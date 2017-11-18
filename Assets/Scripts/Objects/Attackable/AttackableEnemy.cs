@@ -11,6 +11,13 @@ public class AttackableEnemy : AttackableBase {
     private float PushBackMagnitude = 3.5f;
     [SerializeField]
     private Character ThisCharacter;
+    [SerializeField]
+    private List<GameObject> DropObjects;
+    [SerializeField]
+    [Range(0,1)]
+    private List<float> DropRate;
+    [SerializeField]
+    private GameObject DeathFX;
 
     private float m_Health;
 
@@ -33,11 +40,20 @@ public class AttackableEnemy : AttackableBase {
 
         float damage = 10; //Change at some point
         m_Health -= damage;
-        //Debug.Log("ENEMY HIT! Health: " + m_Health);
 
         DamageNumbers.Instance.ShowDamageNumber(damage, transform.position);
 
         if (m_Health <= 0) {
+            if (DeathFX != null) Destroy(Instantiate(DeathFX, transform.position, Quaternion.identity), 3);
+            for(int index = 0; index < DropObjects.Count; ++index) {
+                if (DropRate == null) break;
+                if (Random.Range(0f, 1f) <= DropRate[index]) {
+                    if (DropObjects[index] != null) {
+                        Destroy(Instantiate(DropObjects[index], transform.position, Quaternion.identity), 10);
+                        break;
+                    }
+                }
+            }
             Destroy(ThisCharacter.gameObject);
         }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4461187, g: 0.4906428, b: 0.5462915, a: 1}
+  m_IndirectSpecularColor: {r: 0.44956958, g: 0.49964797, b: 0.5756662, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -564,13 +564,19 @@ Prefab:
     - target: {fileID: 114699386832567770, guid: 92a148fca1eb9cc44b53b17a00bb8764,
         type: 2}
       propertyPath: StartSceneIndex
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114699386832567770, guid: 92a148fca1eb9cc44b53b17a00bb8764,
         type: 2}
       propertyPath: CurrentScene
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114699386832567770, guid: 92a148fca1eb9cc44b53b17a00bb8764,
+        type: 2}
+      propertyPath: CharacterData
+      value: 
+      objectReference: {fileID: 11400000, guid: 65ec739563ad6d040a6c5c387b1f4290,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92a148fca1eb9cc44b53b17a00bb8764, type: 2}
   m_IsPrefabParent: 0
@@ -682,6 +688,22 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 338723579}
   m_Script: {fileID: 11500000, guid: a1b5af34ba35c444da0221ae9ead36fc, type: 3}
+--- !u!1 &1982953603 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1804107730700150, guid: 1403f7e283c6f1d458c183ceef61e7fe,
+    type: 2}
+  m_PrefabInternal: {fileID: 2088511065}
+--- !u!114 &1982953614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1982953603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9348d58109515904c898b0e0db2cf856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2088511065
 Prefab:
   m_ObjectHideFlags: 0
@@ -759,7 +781,7 @@ Prefab:
     - target: {fileID: 114301816412082246, guid: 1403f7e283c6f1d458c183ceef61e7fe,
         type: 2}
       propertyPath: RotationSpeed
-      value: 5
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1403f7e283c6f1d458c183ceef61e7fe, type: 2}
