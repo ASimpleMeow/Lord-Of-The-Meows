@@ -8,6 +8,42 @@
       "enabledGameObject": true,
       "SignChoiceMessageOverride": false,
       "SignChoiceMessage": [ ]
+    },
+    {
+      "objectName": "Chest1",
+      "script": "InteractableChest",
+      "keyVariable": false,
+      "enabled": true,
+      "enabledGameObject": true,
+      "SignChoiceMessageOverride": false,
+      "SignChoiceMessage": [ ]
+    },
+    {
+      "objectName": "Chest2",
+      "script": "InteractableChest",
+      "keyVariable": false,
+      "enabled": true,
+      "enabledGameObject": true,
+      "SignChoiceMessageOverride": false,
+      "SignChoiceMessage": [ ]
+    },
+    {
+      "objectName": "Chest3",
+      "script": "InteractableChest",
+      "keyVariable": false,
+      "enabled": true,
+      "enabledGameObject": true,
+      "SignChoiceMessageOverride": false,
+      "SignChoiceMessage": [ ]
+    },
+    {
+      "objectName": "Chest4",
+      "script": "InteractableChest",
+      "keyVariable": false,
+      "enabled": true,
+      "enabledGameObject": true,
+      "SignChoiceMessageOverride": false,
+      "SignChoiceMessage": [ ]
     }
   ]
 }

@@ -36,6 +36,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1146900341093632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4886968356542534}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1153626725944648
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +108,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4307596679706512}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4307596679706512
 Transform:
@@ -102,12 +117,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1008561970084860}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.265625, y: 71.62, z: 0.55352986}
+  m_LocalPosition: {x: -106.265625, y: 71.62, z: 27.811132}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4709497368344738}
-  - {fileID: 4173742019666540}
+  - {fileID: 4886968356542534}
   - {fileID: 4431458924869712}
+  - {fileID: 4173742019666540}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -136,6 +152,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4307596679706512}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4886968356542534
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146900341093632}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4307596679706512}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23974716138192714
 MeshRenderer:
@@ -256,7 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackDamage: 1
   CharacterPushBack: 5.5
-  m_AttackableEnemy: {fileID: 0}
+  m_AttackableEnemy: {fileID: 114133502732145810}
 --- !u!114 &114423319620717532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -282,7 +311,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WalkSpeed: 4
   RunSpeed: 0
-  RotationSpeed: 0
+  RotationSpeedMax: 0
+  RotationSpeedMin: 0
   Weapon: {fileID: 0}
 --- !u!114 &114692554584254668
 MonoBehaviour:

@@ -23,6 +23,7 @@ public class DataController : MonoBehaviour {
         if (File.Exists(path)) {
             string dataAsJson = File.ReadAllText(path);
             JsonUtility.FromJsonOverwrite(dataAsJson, Data);
+            Debug.Log("Level Data Loaded + " + Data.LevelName);
         } else {
             path = "Data/" + Data.LevelName + "/" + DefaultDataName;
             TextAsset t = Resources.Load<TextAsset>(path.Replace(".json",""));

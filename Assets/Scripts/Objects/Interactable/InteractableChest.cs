@@ -33,6 +33,10 @@ public class InteractableChest : InteractableBase {
         m_IsOpen = m_Data.keyVariable;
         enabled = m_Data.enabled;
         gameObject.SetActive(m_Data.enabledGameObject);
+
+        if (m_IsOpen) {
+            if (OpenChestMesh != null) m_MeshFilter.mesh = OpenChestMesh;
+        }
     }
 
     public override void OnInteract(Character character) {

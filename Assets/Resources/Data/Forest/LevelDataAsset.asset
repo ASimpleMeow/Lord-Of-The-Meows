@@ -16,7 +16,35 @@ MonoBehaviour:
   - objectName: Chest
     script: InteractableChest
     keyVariable: 0
-    enabled: 0
-    enabledGameObject: 0
+    enabled: 1
+    enabledGameObject: 1
+    SignChoiceMessageOverride: 0
+    SignChoiceMessage: []
+  - objectName: Chest1
+    script: InteractableChest
+    keyVariable: 0
+    enabled: 1
+    enabledGameObject: 1
+    SignChoiceMessageOverride: 0
+    SignChoiceMessage: []
+  - objectName: Chest2
+    script: InteractableChest
+    keyVariable: 0
+    enabled: 1
+    enabledGameObject: 1
+    SignChoiceMessageOverride: 0
+    SignChoiceMessage: []
+  - objectName: Chest3
+    script: InteractableChest
+    keyVariable: 0
+    enabled: 1
+    enabledGameObject: 1
+    SignChoiceMessageOverride: 0
+    SignChoiceMessage: []
+  - objectName: Chest4
+    script: InteractableChest
+    keyVariable: 0
+    enabled: 1
+    enabledGameObject: 1
     SignChoiceMessageOverride: 0
     SignChoiceMessage: []
